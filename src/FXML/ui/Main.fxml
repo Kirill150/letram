@@ -203,7 +203,7 @@
                                                   <columns>
                                                     <TableColumn fx:id="ColVards" prefWidth="74.0" text="Vards" />
                                                     <TableColumn fx:id="ColUzvards" prefWidth="92.0" text="Uzvards" />
-                                                      <TableColumn fx:id="ColKods" prefWidth="90.0" text="Pers-kods" />
+                                                      <TableColumn fx:id="ColKods" prefWidth="90.0" text="Pers-code" />
                                                       <TableColumn prefWidth="109.0" text="Cita informacija" />
                                                   </columns>
                                                    <columnResizePolicy>
