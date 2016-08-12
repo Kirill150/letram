@@ -1,53 +1,57 @@
 package Objects;
 
+import java.util.LinkedList;
+
 /**
  * Created by Papai on 2016.08.03..
  */
 public class Driver {
 
-    private String vards;
-    private String uzvards;
-    private  String kods;
-    private String hours;
-    private String Total;
+    private String name;
+    private String surname;
+    private String code;
+    private Integer TotalHours;
+    private String Tram;
+    private LinkedList<Date> Dates;
 
-    public String getVards() {
-        return vards;
+    public String getName() {
+        return name;
     }
 
-    public void setVards(String vards) {
-        this.vards = vards;
+    public void setName(String vards) {
+        this.name = vards;
     }
 
-    public String getUzvards() {
-        return uzvards;
+    public String getSurname() {
+        return surname;
     }
 
-    public void setUzvards(String uzvards) {
-        this.uzvards = uzvards;
+    public void setSurname(String uzvards) {
+        this.surname = uzvards;
     }
 
-    public String getKods() {
-        return kods;
+    public String getCode() {
+        return code;
     }
 
-    public void setKods(String kods) {
-        this.kods = kods;
+    public void setCode(String code) {
+        this.code = code;
     }
 
-    public String getHours() {
-        return hours;
+    public Integer getTotalHours() {
+        return TotalHours;
     }
 
-    public void setHours(String hours) {
-        this.hours = hours;
+    public void setTotalHours(Integer total) {
+        TotalHours = total;
     }
 
-    public String getTotal() {
-        return Total;
+    public String getTram() {
+        return Tram;
     }
 
-    public void setTotal(String total) {
-        Total = total;
+    public void setTram(String tram) {
+        Tram = tram;
     }
+
 }

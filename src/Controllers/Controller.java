@@ -1,10 +1,8 @@
 package Controllers;
 
 
-import Objects.Stundas;
-import Objects.Tram;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import database.CreateStatement;
+import database.ExecuteStatement;
 import javafx.event.ActionEvent;
 
 import javafx.fxml.FXML;
@@ -18,119 +16,70 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import Objects.Driver;
+
 import java.io.IOException;
-import java.util.LinkedList;
 
 import static javafx.collections.FXCollections.observableArrayList;
 
 
 public class Controller {
 
+    @FXML
+    private TextField HToday, HMonth, Shift, TramD, Day;
+    @FXML
+    public Label Text;
+    @FXML
+    public TableColumn<Driver,String> ColVards;
+    @FXML
+    public TableColumn<Driver,String> ColUzvards;
+    @FXML
+    public TableColumn<Driver,String> ColKods;
+    @FXML
+    public TableView DriverTable;
 
     @FXML
-    private TableColumn<Driver,String> ColVards;
-    @FXML
-    private TableColumn<Driver,String> ColUzvards;
-    @FXML
-    private TableColumn<Driver,String> ColKods;
+    public void initialize(){
+    ExecuteStatement.createTable(CreateStatement.CreateStatementForAllDriversTable());
+    ExecuteStatement.createTable(CreateStatement.CreateStatementForPlaningTable());
 
-    @FXML
-    private TableView DriverTable;
-    @FXML
-    private TableView MainTable;
-    @FXML
-    private TableView TablePlan;
-    @FXML
-    private TableColumn<Stundas,String> ColStundas;
-    @FXML
-    private TableColumn<Driver,String> ColTram1;
-    @FXML
-    private TableColumn<Stundas,String> ColTram2;
-    @FXML
-    private TableColumn<Stundas,String> ColTram3;
-    @FXML
-    private TableColumn<Driver,String> PlanVardsCol;
-    @FXML
-    private TableColumn<Driver,String> Plan1;
-    @FXML
-    private TableColumn<Driver,String> Plan2;
-    @FXML
-    private TableColumn<Driver,String> Plan3;
-    @FXML
-    private TableColumn<Driver,String> PlanKopa;
+        ColVards.setCellValueFactory(new PropertyValueFactory<Driver, String>("name"));
+        ColUzvards.setCellValueFactory(new PropertyValueFactory<Driver, String>("surname"));
+        ColKods.setCellValueFactory(new PropertyValueFactory<Driver, String>("code"));
 
-@FXML
-private void initialize(){
+        DriverTable.setItems(ExecuteStatement.ParsingDrivers());
 
-    ColVards.setCellValueFactory(new PropertyValueFactory<Driver, String>("vards"));
-    PlanVardsCol.setCellValueFactory(new PropertyValueFactory<Driver, String>("vards"));
-    Plan1.setCellValueFactory(new PropertyValueFactory<Driver, String>("hours"));
-    Plan2.setCellValueFactory(new PropertyValueFactory<Driver, String>("hours"));
-    Plan3.setCellValueFactory(new PropertyValueFactory<Driver, String>("hours"));
-    PlanKopa.setCellValueFactory(new PropertyValueFactory<Driver, String>("Total"));
-    ColUzvards.setCellValueFactory(new PropertyValueFactory<Driver, String>("uzvards"));
-    ColKods.setCellValueFactory(new PropertyValueFactory<Driver, String>("kods"));
-Driver driver1 = new Driver();
-    driver1.setUzvards("Berzins");
-    driver1.setVards("Janis");
-    driver1.setKods("334242");
-    driver1.setHours("8");
-    driver1.setTotal("24");
-    Driver driver2 = new Driver();
-    driver2.setVards("Peteris");
-    driver2.setUzvards("Laurins");
-    driver2.setKods("12345");
-    driver2.setHours("8");
-    driver2.setTotal("24");
-    Driver driver3 = new Driver();
-    driver3.setVards("Aleksandrs");
-    driver3.setUzvards("Purtis");
-    driver3.setKods("999");
-    driver3.setHours("8");
-    driver3.setTotal("24");
-    ObservableList<Driver> options =
-            FXCollections.observableArrayList(driver1, driver2, driver3
 
-            );
-    DriverTable.setItems(options);
-    TablePlan.setItems(options);
 
-    ColStundas.setCellValueFactory(new PropertyValueFactory<Stundas, String>("stundas"));
-    ColTram1.setCellValueFactory(new PropertyValueFactory<Driver, String>("vards"));
-    ObservableList<Object> stundas =
-            FXCollections.observableArrayList(
-            );
-    for(Integer i= 0; i<24; i++){
+        DriverTable.setRowFactory(item -> {
+            TableRow<Driver> row = new TableRow<>();
+            row.setOnMouseClicked(event -> {
+                if (!row.isEmpty()) {
+                    Driver clickedRow = row.getItem();
+                    if(clickedRow.getName().equals("Vasja")){
+                    HToday.setText("VasjasValue");
+                    HMonth.setText("VasjasValue");
+                    Shift.setText("VasjasValue");
+                    TramD.setText("VasjasValue");
+                    Day.setText("VasjasValue");}
+                    if(clickedRow.getName().equals("Matis")){
+                    HToday.setText("MatissValue");
+                    HMonth.setText("MatissValue");
+                    Shift.setText("MatissValue");
+                    TramD.setText("MatissValue");
+                    Day.setText("MatissValue");}
+                }
+           });return row;
+        });
 
-        Stundas st1 = new Stundas();
-        st1.setStundas(i.toString());
-        stundas.add(st1);
+
+
 
     }
 
-
-
-    MainTable.setItems(stundas);
-
-
-
-
-
-
-
-
-
-
-
-
-}
-
     public void EditDriver(ActionEvent actionEvent) throws Exception{
 
-
-
         Stage stage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("edit.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../FXML/ui/LinkedToDriversUi/editDriver.fxml"));
         stage.setTitle("Edit Driver");
         stage.setMinHeight(250);
         stage.setMinWidth(150);
@@ -139,16 +88,15 @@ Driver driver1 = new Driver();
         stage.initModality(Modality.WINDOW_MODAL);
         stage.initOwner(((Node)actionEvent.getSource()).getScene().getWindow());
         stage.show();
-
-
-
-
+        stage.setOnHiding(event -> {
+            updateDriversTable();
+        });
     }
 
     public void DeleteDriver(ActionEvent actionEvent) throws Exception {
 
         Stage stage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("delete.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../FXML/ui/LinkedToDriversUi/deleteDriver.fxml"));
         stage.setTitle("Delete Driver");
         stage.setMinHeight(100);
         stage.setMinWidth(150);
@@ -157,30 +105,32 @@ Driver driver1 = new Driver();
         stage.initModality(Modality.WINDOW_MODAL);
         stage.initOwner(((Node)actionEvent.getSource()).getScene().getWindow());
         stage.show();
-
+        stage.setOnHiding(event -> {
+            updateDriversTable();
+        });
     }
 
     public void AddDriver(ActionEvent actionEvent) throws Exception {
 
-
-
+        FXMLLoader loader = new FXMLLoader();
         Stage stage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("add.fxml"));
+        Parent root = loader.load(getClass().getResource("../FXML/ui/LinkedToDriversUi/addDriver.fxml"));
         stage.setTitle("Add Driver");
         stage.setMinHeight(150);
         stage.setMinWidth(400);
         stage.setResizable(false);
         stage.setScene(new Scene(root));
-        stage.initModality(Modality.WINDOW_MODAL);
         stage.initOwner(((Node)actionEvent.getSource()).getScene().getWindow());
         stage.show();
-
-    }
+        stage.setOnHiding(event -> {
+           updateDriversTable();
+        });
+   }
 
     public void AddTram(ActionEvent actionEvent) throws IOException {
 
         Stage stage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("addTram.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../FXML/ui/LinkedToTramsUi/addTram.fxml"));
         stage.setTitle("Add Tram");
         stage.setMinHeight(150);
         stage.setMinWidth(400);
@@ -195,7 +145,7 @@ Driver driver1 = new Driver();
 
     public void EditTram(ActionEvent actionEvent) throws IOException {
         Stage stage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("editTram.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../FXML/ui/LinkedToTramsUi/editTram.fxml"));
         stage.setTitle("Edit Tram");
         stage.setMinHeight(250);
         stage.setMinWidth(150);
@@ -208,7 +158,7 @@ Driver driver1 = new Driver();
 
     public void DeleteTram(ActionEvent actionEvent) throws IOException {
         Stage stage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("deleteTram.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../FXML/ui/LinkedToTramsUi/deleteTram.fxml"));
         stage.setTitle("Delete Tram");
         stage.setMinHeight(100);
         stage.setMinWidth(150);
@@ -222,7 +172,7 @@ Driver driver1 = new Driver();
     public void PlanAdd(ActionEvent actionEvent) throws IOException {
 
         Stage stage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("addTram.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../FXML/ui/LinkedToTramsUi/addTram.fxml"));
         stage.setTitle("Add Tram");
         stage.setMinHeight(150);
         stage.setMinWidth(400);
@@ -234,4 +184,13 @@ Driver driver1 = new Driver();
 
 
     }
+
+    public void updateDriversTable(){
+
+        DriverTable.setItems(ExecuteStatement.ParsingDrivers());
+    }
+
+
+
+
 }
