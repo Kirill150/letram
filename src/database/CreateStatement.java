@@ -26,7 +26,7 @@ public class CreateStatement {
                 + "Tram_id INT NOT NULL, "
                 + "Hours INT NOT NULL, "
                 + "Shift INT NOT NULL, "
-                + "holiday BOOLEAN NOT NULL)";
+                + "holiday BOOLEAN)";
         return sql;
     }
     public static String insertStatementForAllDriversTable(Driver driver){
@@ -69,7 +69,7 @@ public class CreateStatement {
                 + "Tram_id INT NOT NULL, "
                 + "Hours INT NOT NULL, "
                 + "Shift INT NOT NULL, "
-                + "holiday BOOLEAN NOT NULL)";
+                + "holiday BOOLEAN)";
         System.out.println(sql);
     }
 }

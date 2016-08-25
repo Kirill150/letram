@@ -5,7 +5,6 @@ import database.CreateStatement;
 import database.ExecuteStatement;
 import javafx.event.ActionEvent;
 
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 
@@ -14,19 +13,14 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.input.MouseButton;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.Background;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import Objects.Driver;
-import javafx.util.Callback;
 
 import java.io.IOException;
 
 import static javafx.collections.FXCollections.observableArrayList;
-import static javafx.scene.control.cell.TextFieldTableCell.*;
 
 
 public class Controller {
@@ -43,7 +37,7 @@ public class Controller {
     public TableColumn<Driver,String> ColKods;
     @FXML
     public TableView DriverTable, TablePlan;
-
+    public static Stage AddHoursstage;
     @FXML
     public void initialize(){
     ExecuteStatement.createTable(CreateStatement.CreateStatementForAllDriversTable());
@@ -56,9 +50,14 @@ public class Controller {
 
         PlanVardsCol.setCellValueFactory(new PropertyValueFactory<>("name"));
         TablePlan.setItems(ExecuteStatement.ParsingDrivers());
+        TablePlan.getSelectionModel().setCellSelectionEnabled(true);
         TablePlan.setEditable(true);
 
+        initCellFactories();
+
+
         DriverTable.setItems(ExecuteStatement.ParsingDrivers());
+
 
         DriverTable.setRowFactory(item -> {
             TableRow<Driver> row = new TableRow<>();
@@ -72,50 +71,6 @@ public class Controller {
                     Day.setText(clickedRow.getName());}
                 });return row;
            });
-
-        PlanVardsCol.setCellFactory(e-> {
-                final TableCell<Driver, String> cell = new TableCell<>();
-                cell.textProperty().bind(cell.itemProperty()); // in general might need to subclass TableCell and override updateItem(...) here
-                cell.setOnMouseClicked(event -> System.out.println(cell.getText()));
-                return cell ;
-            });
-
-        Plan1.setCellFactory(e-> {
-            TableCell<Driver, String> cell = new TableCell<>();
-            cell.setOnMouseClicked(event->{
-                if(event.getClickCount()==2&&event.getButton()==MouseButton.PRIMARY) {
-                    try {
-                        showAddDriver();
-                    } catch (Exception ex) {
-                        System.out.println("EXCE");
-                    }
-                }
-            });
-            return  cell;
-        });
-
-
-        final ContextMenu contextMenu = new ContextMenu();
-
-        MenuItem item1 = new MenuItem("About");
-
-        MenuItem item2 = new MenuItem("Preferences");
-
-        contextMenu.getItems().addAll(item1, item2);
-
-
-        Plan2.setCellFactory(e-> {
-            TableCell<Driver, String> cell = new TableCell<>();
-            cell.setOnMouseClicked(event -> {
-                if (event.getButton()== MouseButton.SECONDARY) {
-                    cell.setContextMenu(contextMenu);
-
-                   // contextMenu.show(cell.getScene().getWindow());
-
-               }
-            });
-            return cell;
-        } );
 
     }
 
@@ -236,22 +191,68 @@ public class Controller {
 
     }
 
-    public void showAddDriver()throws Exception {
-    FXMLLoader loader = new FXMLLoader();
-    Stage stage = new Stage();
-    Parent root = loader.load(getClass().getResource("../FXML/ui/LinkedToDriversUi/addDriver.fxml"));
-    stage.setTitle("Add Driver");
-    stage.setMinHeight(150);
-    stage.setMinWidth(400);
-    stage.setResizable(false);
-    stage.setScene(new Scene(root));
-    stage.initModality(Modality.WINDOW_MODAL);
-    stage.initOwner(TablePlan.getScene().getWindow());
-    stage.show();
-    stage.setOnHiding(event -> {
-        updateDriversTable();
-    });
-}
+    public void showAddHoursPane() throws Exception{
+        FXMLLoader loader = new FXMLLoader();
+        AddHoursstage = new Stage();
+        Parent root = loader.load(getClass().getResource("../FXML/ui/AddHoursPlan.fxml"));
+        AddHoursstage.setTitle("Add Hours");
+        AddHoursstage.setMaxWidth(150);
+        AddHoursstage.setResizable(false);
+        AddHoursstage.setScene(new Scene(root));
+        AddHoursstage.initModality(Modality.WINDOW_MODAL);
+        AddHoursstage.initOwner(TablePlan.getScene().getWindow());
+        AddHoursstage.show();
 
 
+        AddHoursstage.setOnHiding(event -> {
+            System.out.println("hidden");
+        });
+
+    }
+
+    private void initCellFactories(){
+
+
+        setCellFactory(Plan1);
+        setCellFactory(Plan2);
+        setCellFactory(Plan3);
+
+    }
+
+    public void setCellFactory(TableColumn<Driver,String> Column){
+
+        ContextMenu contextMenu = new ContextMenu();
+        MenuItem item1 = new MenuItem("Edit");
+        MenuItem item2 = new MenuItem("Clean");
+        contextMenu.getItems().addAll(item1, item2);
+
+        Column.setCellFactory(e-> {
+            TableCell<Driver, String> cell = new TableCell<>();
+            cell.setOnMouseClicked(event->{
+                if(event.getClickCount()==2&&event.getButton()==MouseButton.PRIMARY) {
+                    try {
+                      //  System.out.println(PlanVardsCol.getCellData( cell.getIndex()));
+                        showAddHoursPane();
+
+                        AddHoursstage.setOnHiding(event1 -> {
+                            if(AddHoursstage.getUserData()!=null){
+                             Driver d =   (Driver)AddHoursstage.getUserData();
+                               System.out.println(d.getName());
+                            }
+                                //cell.setText(AddHoursstage.getUserData().toString());
+
+                        });// AddHoursstage.setUserData(null);
+                    } catch (Exception ex) {
+                        System.out.println("EXCE");
+                    }
+                } if (event.getButton()== MouseButton.SECONDARY) {
+                    cell.setContextMenu(contextMenu);
+                }
+            });
+            return  cell;
+        });
+
+
+
+    }
 }
