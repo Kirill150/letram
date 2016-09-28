@@ -14,7 +14,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="138.0" prefWidth="392.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.DriverControllers.InsertDriver">
    <children>
-      <Button fx:id="InsertDriver" layoutX="291.0" layoutY="19.0" mnemonicParsing="false" onAction="#InsertDriver" text="Add" />
+      <Button fx:id="InsertDriver" layoutX="291.0" layoutY="19.0" mnemonicParsing="false" onAction="#InsertDriver" prefHeight="25.0" prefWidth="52.0" text="Add" />
       <Label layoutX="14.0" layoutY="14.0" prefHeight="34.0" prefWidth="45.0" text="Name:" />
       <Label layoutX="14.0" layoutY="50.0" prefHeight="34.0" prefWidth="70.0" text="Surname" />
       <TextField fx:id="Surname" layoutX="99.0" layoutY="55.0" />
@@ -22,5 +22,6 @@
       <Button fx:id="CloseButton" layoutX="291.0" layoutY="55.0" mnemonicParsing="false" onAction="#Cancel" text="Cancel" />
       <Label layoutX="14.0" layoutY="84.0" prefHeight="34.0" prefWidth="70.0" text="Id" />
       <TextField fx:id="id" layoutX="99.0" layoutY="89.0" />
+      <Button layoutX="291.0" layoutY="89.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="52.0" text="Clear " />
    </children>
 </AnchorPane>

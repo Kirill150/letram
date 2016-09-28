@@ -5,14 +5,37 @@ package Objects;
  */
 public class Tram {
 
-    private String tram;
+    private String Id;
+    private String Number;
+    private String color;
 
-    public String getTram() {
-        return tram;
+
+    public String getId() {
+        return Id;
     }
 
-    public void setTram(String tram) {
-        this.tram = tram;
+    public void setId(String id) {
+        Id = id;
     }
 
+    public String getNumber() {
+
+        return Number;
+    }
+
+    public void setNumber(String number) {
+
+        Number = number;
+    }
+
+    public String getColor() {
+
+        return color;
+    }
+
+    public void setColor(String color) {
+
+
+        this.color = color;
+    }
 }

@@ -1,4 +1,4 @@
-package Controllers;
+package Controllers.PlanningConrollers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

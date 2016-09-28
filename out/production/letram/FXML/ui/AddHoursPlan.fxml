@@ -1,73 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.chart.*?>
-<?import javafx.scene.media.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.paint.*?>
-<?import javafx.scene.control.*?>
 <?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 
-<GridPane alignment="CENTER" cacheShape="false" centerShape="false" maxHeight="200.0" maxWidth="150.0" minHeight="200.0" minWidth="150.0" prefHeight="200.0" prefWidth="150.0" scaleShape="false" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.PlanningRecordController">
-  <columnConstraints>
-    <ColumnConstraints hgrow="NEVER" maxWidth="75.0" minWidth="10.0" prefWidth="75.0" />
-      <ColumnConstraints hgrow="NEVER" maxWidth="75.0" minWidth="10.0" prefWidth="300.0" />
-  </columnConstraints>
-  <rowConstraints>
-    <RowConstraints />
-    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
-      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
-    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
-      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
-  </rowConstraints>
-   <children>
-      <Label prefHeight="31.0" prefWidth="83.0" text="Tram" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-         <GridPane.margin>
-            <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
-         </GridPane.margin>
-      </Label>
-      <Label prefHeight="29.0" prefWidth="82.0" text="Hours" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
-         <GridPane.margin>
-            <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
-         </GridPane.margin>
-      </Label>
-      <Button mnemonicParsing="false" onAction="#Ok" text="Ok" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
-         <GridPane.margin>
-            <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
-         </GridPane.margin>
-      </Button>
-      <Label layoutX="10.0" layoutY="78.0" prefHeight="27.0" prefWidth="83.0" text="Shift" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
-         <GridPane.margin>
-            <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
-         </GridPane.margin>
-      </Label>
-      <TextField fx:id="Tram" prefHeight="25.0" prefWidth="59.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
-         <GridPane.margin>
-            <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
-         </GridPane.margin>
-      </TextField>
-      <TextField fx:id="Hours" GridPane.columnIndex="1" GridPane.rowIndex="2">
-         <GridPane.margin>
-            <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
-         </GridPane.margin>
-      </TextField>
-      <TextField fx:id="Shift" GridPane.columnIndex="1" GridPane.rowIndex="3">
-         <GridPane.margin>
-            <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
-         </GridPane.margin>
-      </TextField>
-      <Button mnemonicParsing="false" onAction="#Cancel" text="Cancel" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
-         <GridPane.margin>
-            <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
-         </GridPane.margin>
-      </Button>
-   </children>
-   <padding>
-      <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
-   </padding>
-</GridPane>
+
+<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.PlanningConrollers.PlanningRecordController">
+    <children>
+        <GridPane alignment="CENTER" cacheShape="false" centerShape="false" maxHeight="278.0" maxWidth="150.0" minHeight="157.0" minWidth="140.0" prefHeight="157.0" prefWidth="140.0" scaleShape="false">
+            <columnConstraints>
+                <ColumnConstraints hgrow="NEVER" maxWidth="75.0" minWidth="10.0" prefWidth="72.0" />
+                <ColumnConstraints hgrow="NEVER" maxWidth="75.0" minWidth="10.0" prefWidth="75.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
+                <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="40.0" vgrow="ALWAYS" />
+                <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="40.0" vgrow="ALWAYS" />
+                <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="ALWAYS" />
+                <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="ALWAYS" />
+            </rowConstraints>
+            <children>
+                <Label prefHeight="31.0" prefWidth="83.0" text="Tram" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                    <GridPane.margin>
+                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                    </GridPane.margin>
+                </Label>
+                <Label prefHeight="29.0" prefWidth="82.0" text="Hours" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                    <GridPane.margin>
+                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                    </GridPane.margin>
+                </Label>
+                <Button mnemonicParsing="false" onAction="#Ok" text="Ok" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                    <GridPane.margin>
+                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                    </GridPane.margin>
+                </Button>
+                <Label layoutX="10.0" layoutY="78.0" prefHeight="27.0" prefWidth="83.0" text="Shift" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                    <GridPane.margin>
+                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                    </GridPane.margin>
+                </Label>
+                <TextField fx:id="Tram" prefHeight="25.0" prefWidth="59.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <GridPane.margin>
+                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                    </GridPane.margin>
+                </TextField>
+                <TextField fx:id="Hours" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                    <GridPane.margin>
+                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                    </GridPane.margin>
+                </TextField>
+                <TextField fx:id="Shift" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                    <GridPane.margin>
+                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                    </GridPane.margin>
+                </TextField>
+                <Button mnemonicParsing="false" onAction="#Cancel" prefHeight="25.0" prefWidth="75.0" text="Cancel" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                    <GridPane.margin>
+                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                    </GridPane.margin>
+                </Button>
+            </children>
+            <padding>
+                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+            </padding>
+        </GridPane>
+        <GridPane>
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Button mnemonicParsing="false" text="Delete " GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                    <GridPane.margin>
+                        <Insets bottom="10.0" left="3.0" right="3.0" top="3.0" />
+                    </GridPane.margin>
+                </Button>
+            </children>
+        </GridPane>
+    </children>
+</VBox>

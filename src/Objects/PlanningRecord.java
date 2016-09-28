@@ -1,17 +1,16 @@
 package Objects;
 
+
+import java.util.Map;
+
 /**
  * Created by Papai on 2016.08.17..
  */
 public class PlanningRecord {
 
     private String driverId;
-    private String tramId;
-    private String datums;
-    private String hours;
-    private String shift;
-    private boolean holiday;
 
+    private Map<String, TramIdShiftHours> hoursPerDaymap;
 
     public String getDriverId() {
         return driverId;
@@ -21,43 +20,12 @@ public class PlanningRecord {
         this.driverId = driverId;
     }
 
-    public String getTramId() {
-        return tramId;
+    public Map<String, TramIdShiftHours> getHoursPerDaymap() {
+        return hoursPerDaymap;
     }
 
-    public void setTramId(String tramId) {
-        this.tramId = tramId;
+    public void setHoursPerDaymap(Map<String, TramIdShiftHours> map) {
+        this.hoursPerDaymap = map;
     }
 
-    public String getDatums() {
-        return datums;
-    }
-
-    public void setDatums(String datums) {
-        this.datums = datums;
-    }
-
-    public String getHours() {
-        return hours;
-    }
-
-    public void setHours(String hours) {
-        this.hours = hours;
-    }
-
-    public String getShift() {
-        return shift;
-    }
-
-    public void setShift(String shift) {
-        this.shift = shift;
-    }
-
-    public boolean isHoliday() {
-        return holiday;
-    }
-
-    public void setHoliday(boolean holiday) {
-        this.holiday = holiday;
-    }
 }

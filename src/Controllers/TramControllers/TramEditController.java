@@ -1,4 +1,4 @@
-package Controllers;
+package Controllers.TramControllers;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -8,20 +8,21 @@ import javafx.scene.control.ComboBox;
 /**
  * Created by Papai on 2016.08.03..
  */
-public class TramDeleteController {
+public class TramEditController {
 
     @FXML
-    private ComboBox DeleteTramBox;
+    private ComboBox EditTramBo;
 
     @FXML
-    private  void initialize(){
-                DeleteTramBox.setValue("Select tram to delete");
+    private void initialize(){
+
+        EditTramBo.setValue("Select tram to edit");
         ObservableList<String> options2 =
                 FXCollections.observableArrayList(
                         "Tram1",
                         "Tram2",
                         "Tram3"
                 );
-        DeleteTramBox.setItems(options2);
+        EditTramBo.setItems(options2);
     }
 }
