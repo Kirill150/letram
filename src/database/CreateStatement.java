@@ -9,8 +9,6 @@ import Objects.Tram;
  */
 public class CreateStatement {
 
-
-
     public static String CreateStatementForAllDriversTable(){
 
         String sql = "CREATE TABLE IF NOT EXISTS Drivers"
@@ -23,21 +21,13 @@ public class CreateStatement {
     public static String CreateStatementForPlaningTable(){
 
         String sql =
-                "CREATE TABLE IF NOT EXISTS PLAN"
-                + "(ID serial NOT NULL, "
-                + "Date VARCHAR NOT NULL, "
+                "CREATE TABLE IF NOT EXISTS PLAN "
+                + "(Date VARCHAR NOT NULL, "
                 + "Driver_id VARCHAR NOT NULL,"
                 + "Tram_id VARCHAR NOT NULL, "
                 + "Hours VARCHAR NOT NULL, "
                 + "Shift VARCHAR NOT NULL, "
-                + "holiday BOOLEAN, ";
-        return sql;
-    }
-    public static String alterPlanningTable(){
-        String sql=
-                "ALTER TABLE plan" +
-                "ADD CONSTRAINT id" +
-                "PRIMARY KEY (id)";
+                + "holiday BOOLEAN) ";
         return sql;
     }
     public static String getPlanningRecordsId(PlanningRecord record){
@@ -80,28 +70,25 @@ public class CreateStatement {
 
         return sql;
     }
+    public static String insertStatementForPlaningRecord(String driver, String tram,String day,String hours,String shift,Boolean holiday){
 
-    public static  String insertStatementForPlaningRecord(PlanningRecord record, String driverId, String date, boolean b ){
+        String sql = "INSERT INTO plan"
+                + "(date,driver_id,tram_id, hours, shift, holiday)"
+                + "VALUES"+"("+"'"+day+"'"+","+"'"+driver+"'"+","+"'"+tram+"'"+","
+                +"'"+hours+"'"+","+"'"+shift+"',"+"'"+holiday+"')";
 
-//        String update = "update plan " +
-//                "SET date='"+record.getDatums()+"',"+
-//                "driver_id='"+record.getDriverId()+"',"+
-//                "tram_id='"+record.getTramId()+"', "+
-//                "hours='"+record.getHours()+"', "+
-//                "shift='"+record.getShift()+"' "+
-//                "where driver_id ='"+driverId+"' and date = '"+date+"'";
-//
-//        String insert = "INSERT INTO plan"
-//                + "(date,driver_id,tram_id, hours, shift, holiday)"
-//                + "VALUES"+"("+"'"+record.getDatums()+"'"+","+"'"+record.getDriverId()+"'"+","+"'"+record.getTramId()+"'"+","
-//                +"'"+record.getHours()+"'"+","+"'"+record.getShift()+"'"+","+"'"+record.isHoliday()+"'"+")";
-//
-//        if(b==true)return update;
-         return null;
-
+         return sql;
 
     }
+    public static String updateStatementForPlanningTable(String day, String driver, String oldHours, String oldTram,
+                                                         String oldShift, String newTram, String newHours, String newShift) {
 
+    String sql = "UPDATE plan " +
+            "SET tram_id =  "+newTram+", hours = "+newHours+", shift = "+newShift+
+            " WHERE driver_id = '"+driver+"' and date='"+day+"' and hours='"+oldHours+"' and tram_id='"+oldTram+"' and shift='"+oldShift+"'";
+
+        return sql;
+    }
     public static String selectHoursStatementFromPlaningTable(String driver, String date){
 
         String sql = "select hours from plan " +
@@ -110,21 +97,11 @@ public class CreateStatement {
 
         return sql;
     }
-
-    public static void testStatement(PlanningRecord record){
-
-        String sql = "select date,hours from plan " +
-                "where driver_id = '"+record.getDriverId()+"'";
-
-        System.out.println(sql);
-    }
-
     public static String deleteFromPlanning(String name, String date){
         String sql = "delete from plan where driver_id = "+name+" and date = "+date;
 
         return sql;
     }
-
     public static String createTramTable(){
 
         String sql = "CREATE TABLE IF NOT EXISTS Trams "
@@ -155,6 +132,7 @@ public class CreateStatement {
         return sql;
     }
     public static String deleteFromTram(String id){
+
         String sql = "Delete from trams where id = "+id;
 
         return sql;
@@ -166,7 +144,12 @@ public class CreateStatement {
         return sql;
 
     }
+    public static String findTram(String id){
 
+
+
+        return null;
+    }
 }
 
 

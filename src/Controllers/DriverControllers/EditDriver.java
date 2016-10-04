@@ -44,7 +44,7 @@ public class EditDriver {
     }
 
     public void ChangeName(ActionEvent actionEvent) {
-       driver2 =  ExecuteStatement.findDriver(EditDriverCBox.getValue().toString());
+        driver2 =  ExecuteStatement.findDriver(EditDriverCBox.getValue().toString());
         Vards.setText(driver2.getName());
         Uzvards.setText(driver2.getSurname());
         Kods.setText(driver2.getCode());

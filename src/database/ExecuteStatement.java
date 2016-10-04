@@ -208,6 +208,7 @@ public class ExecuteStatement {
         } catch (SQLException e) {
 
         }
+
         return FXCollections.observableList(records);
 
     }
@@ -305,5 +306,32 @@ public class ExecuteStatement {
 
     }
 
+
+    public static  Tram findTram(String id) {
+
+        Tram tram = new Tram();
+        Connection c = GetConnection.getConnection();
+        Statement stmt = null;
+        String query = "select id, number, color" +
+                " from " + "trams WHERE id="+"'"+id+"'";
+
+        try {
+            stmt = c.createStatement();
+            ResultSet rs = stmt.executeQuery(query);
+
+            while(rs.next()) {
+
+                tram.setId(rs.getString("id"));
+               tram.setNumber(rs.getString("number"));
+                tram.setColor(rs.getString("color"));
+
+            }
+
+        } catch (SQLException e) {
+            System.out.println("sqlexception");
+        }
+
+        return tram;
+    }
 }
 

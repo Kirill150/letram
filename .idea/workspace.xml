@@ -24,167 +24,95 @@
       <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controllers/MainController/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="71" column="64" selection-start-line="71" selection-start-column="64" selection-end-line="71" selection-end-column="64" />
+            <state relative-caret-position="128">
+              <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#initializePlanningTable#0;class#Controller#0" expanded="false" />
+                <element signature="method#initialize#0;class#Controller#0" expanded="false" />
+                <element signature="method#createTables#0;class#Controller#0" expanded="false" />
                 <element signature="method#initDriversTable#0;class#Controller#0" expanded="false" />
-                <element signature="class#4144:5059" expanded="false" />
-                <element signature="method#handle#0;class#4144:5059" expanded="false" />
-                <element signature="method#initTramTable#0;class#Controller#0" expanded="false" />
-                <element signature="class#5424:6334" expanded="false" />
-                <element signature="method#handle#0;class#5424:6334" expanded="false" />
+                <element signature="class#3660:4575" expanded="false" />
+                <element signature="method#handle#0;class#3660:4575" expanded="false" />
                 <element signature="method#EditDriver#0;class#Controller#0" expanded="false" />
                 <element signature="method#DeleteDriver#0;class#Controller#0" expanded="false" />
                 <element signature="method#AddDriver#0;class#Controller#0" expanded="false" />
                 <element signature="method#AddDriver#1;class#Controller#0" expanded="false" />
                 <element signature="method#AddTram#0;class#Controller#0" expanded="false" />
-                <element signature="method#AddTram#1;class#Controller#0" expanded="false" />
-                <element signature="method#EditTram#0;class#Controller#0" expanded="false" />
                 <element signature="method#DeleteTram#0;class#Controller#0" expanded="false" />
                 <element signature="method#PlanAdd#0;class#Controller#0" expanded="false" />
                 <element signature="method#updateDriversTable#0;class#Controller#0" expanded="false" />
                 <element signature="method#updateTramTable#0;class#Controller#0" expanded="false" />
-                <element signature="method#updatePlanningTable#0;class#Controller#0" expanded="false" />
-                <element signature="method#initCellFactory#0;class#Controller#0" expanded="false" />
                 <element signature="method#showAddHoursPane#0;class#Controller#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Event.java" pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_91/javafx-src.zip!/javafx/event/Event.java">
+      <file leaf-file-name="TramEditController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Controllers/TramControllers/TramEditController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2006">
-              <caret line="153" column="16" selection-start-line="153" selection-start-column="16" selection-end-line="153" selection-end-column="16" />
+            <state relative-caret-position="445">
+              <caret line="61" column="5" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
               <folding>
-                <element signature="e#0#5920#0" expanded="false" />
-                <element signature="imports" expanded="false" />
-                <element signature="e#1925#1926#0" expanded="false" />
-                <element signature="e#1968#1969#0" expanded="false" />
-                <element signature="e#2975#2976#0" expanded="false" />
-                <element signature="e#3004#3005#0" expanded="false" />
-                <element signature="e#3304#3305#0" expanded="false" />
-                <element signature="e#3336#3337#0" expanded="false" />
-                <element signature="e#4362#4363#0" expanded="false" />
-                <element signature="e#4393#4394#0" expanded="false" />
+                <element signature="e#1342#1343#0" expanded="true" />
+                <element signature="e#1421#1422#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MouseEvent.java" pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_91/javafx-src.zip!/javafx/scene/input/MouseEvent.java">
+      <file leaf-file-name="EditDriver.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controllers/DriverControllers/EditDriver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2227">
-              <caret line="163" column="51" selection-start-line="163" selection-start-column="51" selection-end-line="163" selection-end-column="51" />
-              <folding>
-                <element signature="e#0#37604#0" expanded="false" />
-                <element signature="imports" expanded="false" />
-                <element signature="e#20753#20754#0" expanded="false" />
-                <element signature="e#20792#20793#0" expanded="false" />
-                <element signature="e#21161#21162#0" expanded="false" />
-                <element signature="e#21206#21207#0" expanded="false" />
-                <element signature="e#21614#21615#0" expanded="false" />
-                <element signature="e#21638#21639#0" expanded="false" />
-                <element signature="e#22040#22041#0" expanded="false" />
-                <element signature="e#22064#22065#0" expanded="false" />
-                <element signature="e#22482#22483#0" expanded="false" />
-                <element signature="e#22506#22507#0" expanded="false" />
-                <element signature="e#22780#22781#0" expanded="false" />
-                <element signature="e#22810#22811#0" expanded="false" />
-                <element signature="e#23078#23079#0" expanded="false" />
-                <element signature="e#23108#23109#0" expanded="false" />
-                <element signature="e#24050#24051#0" expanded="false" />
-                <element signature="e#24079#24080#0" expanded="false" />
-                <element signature="e#25015#25016#0" expanded="false" />
-                <element signature="e#25044#25045#0" expanded="false" />
-                <element signature="e#25379#25380#0" expanded="false" />
-                <element signature="e#25408#25409#0" expanded="false" />
-                <element signature="e#26669#26670#0" expanded="false" />
-                <element signature="e#26702#26703#0" expanded="false" />
-                <element signature="e#27854#27855#0" expanded="false" />
-                <element signature="e#27892#27893#0" expanded="false" />
-                <element signature="e#28196#28197#0" expanded="false" />
-                <element signature="e#28228#28229#0" expanded="false" />
-                <element signature="e#28542#28543#0" expanded="false" />
-                <element signature="e#28576#28577#0" expanded="false" />
-                <element signature="e#28870#28871#0" expanded="false" />
-                <element signature="e#28900#28901#0" expanded="false" />
-                <element signature="e#29199#29200#0" expanded="false" />
-                <element signature="e#29230#29231#0" expanded="false" />
-                <element signature="e#29876#29877#0" expanded="false" />
-                <element signature="e#29910#29911#0" expanded="false" />
-                <element signature="e#31708#31709#0" expanded="false" />
-                <element signature="e#31743#31744#0" expanded="false" />
-                <element signature="e#32662#32663#0" expanded="false" />
-                <element signature="e#32702#32703#0" expanded="false" />
-                <element signature="e#33636#33637#0" expanded="false" />
-                <element signature="e#33678#33679#0" expanded="false" />
-                <element signature="e#34529#34530#0" expanded="false" />
-                <element signature="e#34568#34569#0" expanded="false" />
-                <element signature="e#36662#36663#0" expanded="false" />
-                <element signature="e#36695#36696#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="qqqqqqq.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/FXML/ui/qqqqqqq.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1564">
-              <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
+            <state relative-caret-position="333">
+              <caret line="52" column="45" selection-start-line="52" selection-start-column="45" selection-end-line="52" selection-end-column="45" />
               <folding />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="editTram.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/FXML/ui/LinkedToTramsUi/editTram.fxml">
           <provider editor-type-id="JavaFX-Scene-Builder">
             <state />
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PlanningRecordController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controllers/PlanningConrollers/PlanningRecordController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="204">
+              <caret line="22" column="82" selection-start-line="22" selection-start-column="82" selection-end-line="22" selection-end-column="82" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlanningController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controllers/PlanningConrollers/PlanningController.java">
+      <file leaf-file-name="TramDeleteController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controllers/TramControllers/TramDeleteController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
+            <state relative-caret-position="221">
+              <caret line="36" column="72" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="72" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CreateStatement.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CreateStatement.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/database/CreateStatement.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="21">
-              <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+            <state relative-caret-position="215">
+              <caret line="150" column="20" selection-start-line="150" selection-start-column="20" selection-end-line="150" selection-end-column="20" />
               <folding>
-                <element signature="imports" expanded="true" />
                 <element signature="method#CreateStatementForAllDriversTable#0;class#CreateStatement#0" expanded="false" />
+                <element signature="method#CreateStatementForPlaningTable#0;class#CreateStatement#0" expanded="false" />
+                <element signature="method#getPlanningRecordsId#0;class#CreateStatement#0" expanded="false" />
                 <element signature="method#insertStatementForAllDriversTable#0;class#CreateStatement#0" expanded="false" />
                 <element signature="method#deleteStatementForAllDriversTable#0;class#CreateStatement#0" expanded="false" />
                 <element signature="method#selectStatementForAllDriversTable#0;class#CreateStatement#0" expanded="false" />
                 <element signature="method#updateStatementForAllDriversTable#0;class#CreateStatement#0" expanded="false" />
+                <element signature="method#insertStatementForPlaningRecord#0;class#CreateStatement#0" expanded="false" />
+                <element signature="method#updateStatementForPlanningTable#0;class#CreateStatement#0" expanded="false" />
                 <element signature="method#selectHoursStatementFromPlaningTable#0;class#CreateStatement#0" expanded="false" />
-                <element signature="method#testStatement#0;class#CreateStatement#0" expanded="false" />
                 <element signature="method#deleteFromPlanning#0;class#CreateStatement#0" expanded="false" />
                 <element signature="method#createTramTable#0;class#CreateStatement#0" expanded="false" />
+                <element signature="method#insertTram#0;class#CreateStatement#0" expanded="false" />
                 <element signature="method#updateTram#0;class#CreateStatement#0" expanded="false" />
                 <element signature="method#deleteFromTram#0;class#CreateStatement#0" expanded="false" />
                 <element signature="method#selectTram#0;class#CreateStatement#0" expanded="false" />
@@ -193,21 +121,38 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlanningRecord.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Objects/PlanningRecord.java">
+      <file leaf-file-name="addTram.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/FXML/ui/LinkedToTramsUi/addTram.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
+          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+            <state relative-caret-position="347">
+              <caret line="30" column="31" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AddTramController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controllers/TramControllers/AddTramController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="274">
+              <caret line="34" column="37" selection-start-line="27" selection-start-column="7" selection-end-line="34" selection-end-column="37" />
               <folding>
-                <element signature="e#238#239#0" expanded="false" />
-                <element signature="e#269#270#0" expanded="false" />
-                <element signature="e#317#318#0" expanded="false" />
-                <element signature="e#357#358#0" expanded="false" />
-                <element signature="e#421#422#0" expanded="false" />
-                <element signature="e#458#459#0" expanded="false" />
-                <element signature="e#530#531#0" expanded="false" />
-                <element signature="e#571#572#0" expanded="false" />
+                <element signature="e#1286#1287#0" expanded="true" />
+                <element signature="e#1365#1366#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TramColors.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Objects/TramColors.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -215,46 +160,23 @@
       <file leaf-file-name="ExecuteStatement.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/database/ExecuteStatement.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+            <state relative-caret-position="112">
+              <caret line="307" column="0" selection-start-line="307" selection-start-column="0" selection-end-line="307" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#createTable#0;class#ExecuteStatement#0" expanded="false" />
                 <element signature="method#insert#0;class#ExecuteStatement#0" expanded="false" />
                 <element signature="method#findDriver#0;class#ExecuteStatement#0" expanded="false" />
                 <element signature="method#ParsingDrivers#0;class#ExecuteStatement#0" expanded="false" />
                 <element signature="method#DeleteDriver#0;class#ExecuteStatement#0" expanded="false" />
                 <element signature="method#UpdateDriver#0;class#ExecuteStatement#0" expanded="false" />
                 <element signature="method#executeSelectStatement#0;class#ExecuteStatement#0" expanded="false" />
+                <element signature="method#test#0;class#ExecuteStatement#0" expanded="false" />
                 <element signature="method#insertInPlanningTable#0;class#ExecuteStatement#0" expanded="false" />
                 <element signature="method#isRecordInTable#0;class#ExecuteStatement#0" expanded="false" />
                 <element signature="method#parsingTrams#0;class#ExecuteStatement#0" expanded="false" />
                 <element signature="method#executeSql#0;class#ExecuteStatement#0" expanded="false" />
                 <element signature="method#getColorById#0;class#ExecuteStatement#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TramIdShiftHours.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Objects/TramIdShiftHours.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
-              <folding>
-                <element signature="e#274#275#0" expanded="false" />
-                <element signature="e#308#309#0" expanded="false" />
-                <element signature="e#371#372#0" expanded="false" />
-                <element signature="e#400#401#0" expanded="false" />
-                <element signature="e#444#445#0" expanded="false" />
-                <element signature="e#480#481#0" expanded="false" />
-                <element signature="e#512#513#0" expanded="false" />
-                <element signature="e#540#541#0" expanded="false" />
-                <element signature="e#582#583#0" expanded="false" />
-                <element signature="e#616#617#0" expanded="false" />
-                <element signature="e#650#651#0" expanded="false" />
-                <element signature="e#680#681#0" expanded="false" />
-                <element signature="e#727#728#0" expanded="false" />
-                <element signature="e#765#766#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -298,7 +220,6 @@
         <option value="$PROJECT_DIR$/src/Controllers/EditDriver.java" />
         <option value="$PROJECT_DIR$/src/Controllers/DriverControllers/DeleteDriver.java" />
         <option value="$PROJECT_DIR$/src/Controllers/DriverControllers/InsertDriver.java" />
-        <option value="$PROJECT_DIR$/src/Controllers/DriverControllers/EditDriver.java" />
         <option value="$PROJECT_DIR$/src/Objects/Driver.java" />
         <option value="$PROJECT_DIR$/src/Objects/Date.java" />
         <option value="$PROJECT_DIR$/src/Objects/Hours.java" />
@@ -309,7 +230,6 @@
         <option value="$PROJECT_DIR$/src/Controllers/backupController.java" />
         <option value="$PROJECT_DIR$/src/Controllers/PlanningRecordController.java" />
         <option value="$PROJECT_DIR$/src/Controllers/Controller.java" />
-        <option value="$PROJECT_DIR$/src/Controllers/TramControllers/TramEditController.java" />
         <option value="$PROJECT_DIR$/src/Controllers/PlanningConrollers/PlanningController.java" />
         <option value="C:/Program Files/Java/jdk1.8.0_91/jre/lib/rt.jar!/sun/reflect/DelegatingMethodAccessorImpl.class" />
         <option value="$PROJECT_DIR$/src/main/Main.java" />
@@ -318,16 +238,19 @@
         <option value="$PROJECT_DIR$/src/FXML/ui/LinkedToTramsUi/addTram.fxml" />
         <option value="$PROJECT_DIR$/src/Objects/TramColors.java" />
         <option value="$PROJECT_DIR$/src/Controllers/TramControllers/AddTramController.java" />
-        <option value="$PROJECT_DIR$/src/Controllers/TramControllers/TramDeleteController.java" />
         <option value="$PROJECT_DIR$/src/Objects/PlanningTableObject.java" />
         <option value="$PROJECT_DIR$/src/Objects/Record.java" />
         <option value="$PROJECT_DIR$/src/FXML/ui/qqqqqqq.fxml" />
-        <option value="$PROJECT_DIR$/src/database/ExecuteStatement.java" />
-        <option value="$PROJECT_DIR$/src/Controllers/PlanningConrollers/PlanningRecordController.java" />
         <option value="$PROJECT_DIR$/src/Objects/PlanningRecord.java" />
         <option value="$PROJECT_DIR$/src/Objects/TramIdShiftHours.java" />
+        <option value="$PROJECT_DIR$/src/Controllers/PlanningConrollers/PlanningRecordController.java" />
+        <option value="$PROJECT_DIR$/src/Controllers/TramControllers/TramDeleteController.java" />
         <option value="$PROJECT_DIR$/src/Controllers/MainController/Controller.java" />
+        <option value="$PROJECT_DIR$/src/FXML/ui/LinkedToTramsUi/editTram.fxml" />
         <option value="$PROJECT_DIR$/src/database/CreateStatement.java" />
+        <option value="$PROJECT_DIR$/src/database/ExecuteStatement.java" />
+        <option value="$PROJECT_DIR$/src/Controllers/DriverControllers/EditDriver.java" />
+        <option value="$PROJECT_DIR$/src/Controllers/TramControllers/TramEditController.java" />
       </list>
     </option>
   </component>
@@ -362,7 +285,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -428,7 +350,69 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="letram" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="letram" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="ui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="letram" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="letram" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LinkedToTramsUi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="letram" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="letram" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LinkedToDriversUi" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -486,6 +470,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="TramControllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="letram" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="letram" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="PlanningConrollers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -512,8 +518,31 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="letram" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="letram" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DriverControllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -589,7 +618,10 @@
       </Profilers>
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
-      <method />
+      <method>
+        <option name="Make" enabled="true" />
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
       <module name="" />
@@ -612,7 +644,10 @@
       <Profilers>
         <option name="GAPID_DISABLE_PCS" value="false" />
       </Profilers>
-      <method />
+      <method>
+        <option name="Make" enabled="true" />
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
       <module />
@@ -831,8 +866,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -841,7 +876,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36692914" sideWeight="0.511713" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.57165354" sideWeight="0.48828697" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31023622" sideWeight="0.48828697" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -850,7 +885,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15185784" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1511811" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -874,32 +909,32 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/database/ExecuteStatement.java</url>
-          <line>114</line>
-          <properties class="database.ExecuteStatement" method="DeleteDriver" />
-          <option name="timeStamp" value="48" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/database/CreateStatement.java</url>
-          <line>74</line>
+          <line>64</line>
           <properties />
           <option name="timeStamp" value="49" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/database/CreateStatement.java</url>
-          <line>148</line>
+          <line>125</line>
           <properties />
           <option name="timeStamp" value="50" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Controllers/MainController/Controller.java</url>
-          <line>70</line>
+          <line>77</line>
           <properties />
-          <option name="timeStamp" value="52" />
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/database/ExecuteStatement.java</url>
+          <line>61</line>
+          <properties class="database.ExecuteStatement" method="findDriver" />
+          <option name="timeStamp" value="56" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="53" />
+      <option name="time" value="57" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -908,20 +943,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_91/javafx-src.zip!/javafx/event/ActionEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controllers/DriverControllers/ControllerBackup.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_91/javafx-src.zip!/javafx/scene/control/TableView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="14433">
@@ -954,22 +975,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controllers/DeleteController.java" />
-    <entry file="file://$PROJECT_DIR$/src/Controllers/DriverControllers/EditDriver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/FXML/ui/LinkedToDriversUi/addDriver.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="28">
           <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
         </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_91/src.zip!/java/lang/Iterable.java">
@@ -1057,20 +1070,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/FXML/ui/Main.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2465">
           <caret line="145" column="49" selection-start-line="145" selection-start-column="49" selection-end-line="145" selection-end-column="49" />
           <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
         </state>
       </provider>
     </entry>
@@ -1081,52 +1087,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/FXML/ui/LinkedToTramsUi/addTram.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="31" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controllers/DriverControllers/InsertDriver.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
           <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Objects/TramColors.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controllers/TramControllers/TramEditController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/FXML/ui/LinkedToTramsUi/deleteTram.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="83" selection-start-line="17" selection-start-column="83" selection-end-line="17" selection-end-column="83" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controllers/TramControllers/AddTramController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="49" column="8" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="72" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1138,18 +1102,6 @@
             <element signature="imports" expanded="false" />
             <element signature="e#1162#1163#0" expanded="false" />
             <element signature="e#1241#1242#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controllers/TramControllers/TramDeleteController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="29" column="74" selection-start-line="29" selection-start-column="74" selection-end-line="29" selection-end-column="74" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1124#1125#0" expanded="false" />
-            <element signature="e#1203#1204#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1168,21 +1120,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_91/javafx-src.zip!/com/sun/glass/ui/win/WinApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2652">
-          <caret line="191" column="46" selection-start-line="191" selection-start-column="46" selection-end-line="191" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controllers/backupController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-549">
-          <caret line="88" column="25" selection-start-line="88" selection-start-column="25" selection-end-line="88" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_91/javafx-src.zip!/javafx/scene/control/TableCell.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="782">
@@ -1193,63 +1130,20 @@
     <entry file="file://$PROJECT_DIR$/src/Objects/Stundas.java" />
     <entry file="file://$PROJECT_DIR$/src/Objects/PlanningTableObject.java" />
     <entry file="file://$PROJECT_DIR$/src/FXML/ui/AddHoursPlan.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="74" column="11" selection-start-line="0" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Objects/TramIdShiftHours.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
-          <folding>
-            <element signature="e#274#275#0" expanded="false" />
-            <element signature="e#308#309#0" expanded="false" />
-            <element signature="e#371#372#0" expanded="false" />
-            <element signature="e#400#401#0" expanded="false" />
-            <element signature="e#444#445#0" expanded="false" />
-            <element signature="e#480#481#0" expanded="false" />
-            <element signature="e#512#513#0" expanded="false" />
-            <element signature="e#540#541#0" expanded="false" />
-            <element signature="e#582#583#0" expanded="false" />
-            <element signature="e#616#617#0" expanded="false" />
-            <element signature="e#650#651#0" expanded="false" />
-            <element signature="e#680#681#0" expanded="false" />
-            <element signature="e#727#728#0" expanded="false" />
-            <element signature="e#765#766#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Objects/PlanningRecord.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding>
-            <element signature="e#238#239#0" expanded="false" />
-            <element signature="e#269#270#0" expanded="false" />
-            <element signature="e#317#318#0" expanded="false" />
-            <element signature="e#357#358#0" expanded="false" />
-            <element signature="e#421#422#0" expanded="false" />
-            <element signature="e#458#459#0" expanded="false" />
-            <element signature="e#530#531#0" expanded="false" />
-            <element signature="e#571#572#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controllers/PlanningConrollers/PlanningController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1261,14 +1155,47 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/FXML/ui/qqqqqqq.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1564">
           <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_91/javafx-src.zip!/javafx/event/Event.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2006">
+          <caret line="153" column="16" selection-start-line="153" selection-start-column="16" selection-end-line="153" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#5920#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#1925#1926#0" expanded="false" />
+            <element signature="e#1968#1969#0" expanded="false" />
+            <element signature="e#2975#2976#0" expanded="false" />
+            <element signature="e#3004#3005#0" expanded="false" />
+            <element signature="e#3304#3305#0" expanded="false" />
+            <element signature="e#3336#3337#0" expanded="false" />
+            <element signature="e#4362#4363#0" expanded="false" />
+            <element signature="e#4393#4394#0" expanded="false" />
+            <element signature="e#4519#4520#0" expanded="false" />
+            <element signature="e#4550#4551#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#641#642#0" expanded="false" />
+            <element signature="e#669#670#0" expanded="false" />
+          </folding>
+        </state>
       </provider>
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_91/javafx-src.zip!/javafx/scene/input/MouseEvent.java">
@@ -1278,6 +1205,17 @@
           <folding>
             <element signature="e#0#37604#0" expanded="false" />
             <element signature="imports" expanded="false" />
+            <element signature="e#5677#5689#0" expanded="false" />
+            <element signature="e#6026#6038#0" expanded="false" />
+            <element signature="e#6361#6373#0" expanded="false" />
+            <element signature="e#6838#6850#0" expanded="false" />
+            <element signature="e#7418#7430#0" expanded="false" />
+            <element signature="e#7897#7909#0" expanded="false" />
+            <element signature="e#8489#8501#0" expanded="false" />
+            <element signature="e#8963#8975#0" expanded="false" />
+            <element signature="e#9293#9305#0" expanded="false" />
+            <element signature="e#9714#9726#0" expanded="false" />
+            <element signature="e#10867#10879#0" expanded="false" />
             <element signature="e#20753#20754#0" expanded="false" />
             <element signature="e#20792#20793#0" expanded="false" />
             <element signature="e#21161#21162#0" expanded="false" />
@@ -1326,47 +1264,183 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_91/javafx-src.zip!/javafx/event/Event.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_91/javafx-src.zip!/com/sun/javafx/tk/quantum/GlassViewEventHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2006">
-          <caret line="153" column="16" selection-start-line="153" selection-start-column="16" selection-end-line="153" selection-end-column="16" />
+        <state relative-caret-position="6052">
+          <caret line="414" column="0" selection-start-line="414" selection-start-column="0" selection-end-line="414" selection-end-column="0" />
           <folding>
-            <element signature="e#0#5920#0" expanded="false" />
+            <element signature="e#0#52051#0" expanded="false" />
             <element signature="imports" expanded="false" />
-            <element signature="e#1925#1926#0" expanded="false" />
-            <element signature="e#1968#1969#0" expanded="false" />
-            <element signature="e#2975#2976#0" expanded="false" />
-            <element signature="e#3004#3005#0" expanded="false" />
-            <element signature="e#3304#3305#0" expanded="false" />
-            <element signature="e#3336#3337#0" expanded="false" />
-            <element signature="e#4362#4363#0" expanded="false" />
-            <element signature="e#4393#4394#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Objects/PlanningRecord.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="12" column="47" selection-start-line="12" selection-start-column="47" selection-end-line="12" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controllers/backupController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="88" column="25" selection-start-line="88" selection-start-column="25" selection-end-line="88" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controllers/PlanningConrollers/PlanningController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_91/javafx-src.zip!/com/sun/glass/ui/win/WinApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="190" column="0" selection-start-line="190" selection-start-column="0" selection-end-line="190" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controllers/PlanningConrollers/PlanningRecordController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+        <state relative-caret-position="85">
+          <caret line="46" column="88" selection-start-line="46" selection-start-column="88" selection-end-line="46" selection-end-column="113" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FXML/ui/LinkedToTramsUi/deleteTram.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="16" column="84" selection-start-line="16" selection-start-column="84" selection-end-line="16" selection-end-column="84" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FXML/ui/LinkedToTramsUi/addTram.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="30" column="31" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Objects/TramColors.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controllers/TramControllers/TramDeleteController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="36" column="72" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controllers/TramControllers/AddTramController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="34" column="37" selection-start-line="27" selection-start-column="7" selection-end-line="34" selection-end-column="37" />
+          <folding>
+            <element signature="e#1286#1287#0" expanded="true" />
+            <element signature="e#1365#1366#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controllers/MainController/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#initialize#0;class#Controller#0" expanded="false" />
+            <element signature="method#createTables#0;class#Controller#0" expanded="false" />
+            <element signature="method#initDriversTable#0;class#Controller#0" expanded="false" />
+            <element signature="class#3660:4575" expanded="false" />
+            <element signature="method#handle#0;class#3660:4575" expanded="false" />
+            <element signature="method#EditDriver#0;class#Controller#0" expanded="false" />
+            <element signature="method#DeleteDriver#0;class#Controller#0" expanded="false" />
+            <element signature="method#AddDriver#0;class#Controller#0" expanded="false" />
+            <element signature="method#AddDriver#1;class#Controller#0" expanded="false" />
+            <element signature="method#AddTram#0;class#Controller#0" expanded="false" />
+            <element signature="method#DeleteTram#0;class#Controller#0" expanded="false" />
+            <element signature="method#PlanAdd#0;class#Controller#0" expanded="false" />
+            <element signature="method#updateDriversTable#0;class#Controller#0" expanded="false" />
+            <element signature="method#updateTramTable#0;class#Controller#0" expanded="false" />
+            <element signature="method#showAddHoursPane#0;class#Controller#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FXML/ui/LinkedToTramsUi/editTram.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="22" column="82" selection-start-line="22" selection-start-column="82" selection-end-line="22" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/CreateStatement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="150" column="20" selection-start-line="150" selection-start-column="20" selection-end-line="150" selection-end-column="20" />
+          <folding>
+            <element signature="method#CreateStatementForAllDriversTable#0;class#CreateStatement#0" expanded="false" />
+            <element signature="method#CreateStatementForPlaningTable#0;class#CreateStatement#0" expanded="false" />
+            <element signature="method#getPlanningRecordsId#0;class#CreateStatement#0" expanded="false" />
+            <element signature="method#insertStatementForAllDriversTable#0;class#CreateStatement#0" expanded="false" />
+            <element signature="method#deleteStatementForAllDriversTable#0;class#CreateStatement#0" expanded="false" />
+            <element signature="method#selectStatementForAllDriversTable#0;class#CreateStatement#0" expanded="false" />
+            <element signature="method#updateStatementForAllDriversTable#0;class#CreateStatement#0" expanded="false" />
+            <element signature="method#insertStatementForPlaningRecord#0;class#CreateStatement#0" expanded="false" />
+            <element signature="method#updateStatementForPlanningTable#0;class#CreateStatement#0" expanded="false" />
+            <element signature="method#selectHoursStatementFromPlaningTable#0;class#CreateStatement#0" expanded="false" />
+            <element signature="method#deleteFromPlanning#0;class#CreateStatement#0" expanded="false" />
+            <element signature="method#createTramTable#0;class#CreateStatement#0" expanded="false" />
+            <element signature="method#insertTram#0;class#CreateStatement#0" expanded="false" />
+            <element signature="method#updateTram#0;class#CreateStatement#0" expanded="false" />
+            <element signature="method#deleteFromTram#0;class#CreateStatement#0" expanded="false" />
+            <element signature="method#selectTram#0;class#CreateStatement#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/database/ExecuteStatement.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+        <state relative-caret-position="112">
+          <caret line="307" column="0" selection-start-line="307" selection-start-column="0" selection-end-line="307" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#createTable#0;class#ExecuteStatement#0" expanded="false" />
             <element signature="method#insert#0;class#ExecuteStatement#0" expanded="false" />
             <element signature="method#findDriver#0;class#ExecuteStatement#0" expanded="false" />
             <element signature="method#ParsingDrivers#0;class#ExecuteStatement#0" expanded="false" />
             <element signature="method#DeleteDriver#0;class#ExecuteStatement#0" expanded="false" />
             <element signature="method#UpdateDriver#0;class#ExecuteStatement#0" expanded="false" />
             <element signature="method#executeSelectStatement#0;class#ExecuteStatement#0" expanded="false" />
+            <element signature="method#test#0;class#ExecuteStatement#0" expanded="false" />
             <element signature="method#insertInPlanningTable#0;class#ExecuteStatement#0" expanded="false" />
             <element signature="method#isRecordInTable#0;class#ExecuteStatement#0" expanded="false" />
             <element signature="method#parsingTrams#0;class#ExecuteStatement#0" expanded="false" />
@@ -1376,55 +1450,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controllers/MainController/Controller.java">
+    <entry file="file://$PROJECT_DIR$/src/Controllers/DriverControllers/EditDriver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="71" column="64" selection-start-line="71" selection-start-column="64" selection-end-line="71" selection-end-column="64" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#initializePlanningTable#0;class#Controller#0" expanded="false" />
-            <element signature="method#initDriversTable#0;class#Controller#0" expanded="false" />
-            <element signature="class#4144:5059" expanded="false" />
-            <element signature="method#handle#0;class#4144:5059" expanded="false" />
-            <element signature="method#initTramTable#0;class#Controller#0" expanded="false" />
-            <element signature="class#5424:6334" expanded="false" />
-            <element signature="method#handle#0;class#5424:6334" expanded="false" />
-            <element signature="method#EditDriver#0;class#Controller#0" expanded="false" />
-            <element signature="method#DeleteDriver#0;class#Controller#0" expanded="false" />
-            <element signature="method#AddDriver#0;class#Controller#0" expanded="false" />
-            <element signature="method#AddDriver#1;class#Controller#0" expanded="false" />
-            <element signature="method#AddTram#0;class#Controller#0" expanded="false" />
-            <element signature="method#AddTram#1;class#Controller#0" expanded="false" />
-            <element signature="method#EditTram#0;class#Controller#0" expanded="false" />
-            <element signature="method#DeleteTram#0;class#Controller#0" expanded="false" />
-            <element signature="method#PlanAdd#0;class#Controller#0" expanded="false" />
-            <element signature="method#updateDriversTable#0;class#Controller#0" expanded="false" />
-            <element signature="method#updateTramTable#0;class#Controller#0" expanded="false" />
-            <element signature="method#updatePlanningTable#0;class#Controller#0" expanded="false" />
-            <element signature="method#initCellFactory#0;class#Controller#0" expanded="false" />
-            <element signature="method#showAddHoursPane#0;class#Controller#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="333">
+          <caret line="52" column="45" selection-start-line="52" selection-start-column="45" selection-end-line="52" selection-end-column="45" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/CreateStatement.java">
+    <entry file="file://$PROJECT_DIR$/src/Controllers/TramControllers/TramEditController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+        <state relative-caret-position="445">
+          <caret line="61" column="5" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#CreateStatementForAllDriversTable#0;class#CreateStatement#0" expanded="false" />
-            <element signature="method#insertStatementForAllDriversTable#0;class#CreateStatement#0" expanded="false" />
-            <element signature="method#deleteStatementForAllDriversTable#0;class#CreateStatement#0" expanded="false" />
-            <element signature="method#selectStatementForAllDriversTable#0;class#CreateStatement#0" expanded="false" />
-            <element signature="method#updateStatementForAllDriversTable#0;class#CreateStatement#0" expanded="false" />
-            <element signature="method#selectHoursStatementFromPlaningTable#0;class#CreateStatement#0" expanded="false" />
-            <element signature="method#testStatement#0;class#CreateStatement#0" expanded="false" />
-            <element signature="method#deleteFromPlanning#0;class#CreateStatement#0" expanded="false" />
-            <element signature="method#createTramTable#0;class#CreateStatement#0" expanded="false" />
-            <element signature="method#updateTram#0;class#CreateStatement#0" expanded="false" />
-            <element signature="method#deleteFromTram#0;class#CreateStatement#0" expanded="false" />
-            <element signature="method#selectTram#0;class#CreateStatement#0" expanded="false" />
+            <element signature="e#1342#1343#0" expanded="true" />
+            <element signature="e#1421#1422#0" expanded="true" />
           </folding>
         </state>
       </provider>

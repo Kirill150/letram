@@ -47,17 +47,18 @@ public class Controller {
     @FXML
     public TableColumn<Tram, String> TramN,TramId,Color;
     @FXML
-    public TableView DriverTable, TablePlan, TramTable;
-    public ContextMenu cMenu;
+    private  TableView DriverTable, TablePlan, TramTable;
 
+    ContextMenu cMenu = new ContextMenu();
+    MenuItem item1 = new MenuItem("Edit");
+    MenuItem item2 = new MenuItem("Delete");
+    Map<String, String> userData;
     public static Stage AddHoursStage;
 
     @FXML
     public void initialize() {
-        cMenu = new ContextMenu();
-        MenuItem item1 = new MenuItem("Edit");
-        MenuItem item2 = new MenuItem("Delete");
-        cMenu.getItems().addAll(item1, item2);
+
+
         createTables();
         initializePlanningTable();
         initDriversTable();
@@ -71,7 +72,6 @@ public class Controller {
         ExecuteStatement.createTable(CreateStatement.CreateStatementForAllDriversTable());
         ExecuteStatement.createTable(CreateStatement.CreateStatementForPlaningTable());
         ExecuteStatement.createTable(CreateStatement.createTramTable());
-        ExecuteStatement.createTable(CreateStatement.alterPlanningTable());
     }
     // Initializes planning table, sets item to this, and double click event handler
     private void initializePlanningTable() {
@@ -88,7 +88,6 @@ public class Controller {
         TablePlan.setEditable(true);
 
     }
-
     // Initializes Drivers table
     private void initDriversTable(){
 
@@ -102,15 +101,8 @@ public class Controller {
                 protected void updateItem(String item, boolean empty) {
                     super.updateItem(item, empty);
 
-                    if (item == null || empty) {
-                        setText(null);
-                        setStyle("");
-                    } else {
-                        // Format date.
-                        setText(item);
-                        this.setStyle("-fx-text-background-color:red");
-                        // Style all dates in March with a different color.
-                    }
+
+                    setText(item);
                 }
             };
         });
@@ -163,7 +155,7 @@ public class Controller {
                         Tram item = (Tram) c.getItems().get(row);
 
                         TableColumn col = pos.getTableColumn();
-                        AddTram();
+                        EditTram();
 
                     } catch (NullPointerException exx) {
                         System.out.println("empty cell");
@@ -210,6 +202,7 @@ public class Controller {
         stage.show();
         stage.setOnHiding(event -> {
             updateDriversTable();
+            updatePlanningTable();
         });
     }
 
@@ -227,6 +220,7 @@ public class Controller {
         stage.show();
         stage.setOnHiding(event -> {
             updateDriversTable();
+            updatePlanningTable();
         });
     }
 
@@ -315,6 +309,24 @@ public class Controller {
         stage.setOnHiding(event -> updateTramTable());
     }
 
+    public void EditTram (){
+        Stage stage = new Stage();
+        try{
+        Parent root = FXMLLoader.load(getClass().getResource("../../FXML/ui/LinkedToTramsUi/editTram.fxml"));
+        stage.setTitle("Edit Tram");
+        stage.setMinHeight(250);
+        stage.setMinWidth(150);
+        stage.setResizable(false);
+        stage.setScene(new Scene(root));
+        stage.initModality(Modality.WINDOW_MODAL);
+        stage.initOwner(TramTable.getScene().getWindow());
+        stage.show();
+        stage.setOnHiding(event -> updateTramTable());
+        }catch(IOException e){
+            System.out.println("addTram.fxml not found");
+        }
+    }
+
     public void DeleteTram(ActionEvent actionEvent) throws IOException {
         Stage stage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("../../FXML/ui/LinkedToTramsUi/deleteTram.fxml"));
@@ -347,7 +359,7 @@ public class Controller {
 
     }
 
-    private void updatePlanningTable(){
+    public  void updatePlanningTable(){
 
         TablePlan.setItems(ExecuteStatement.test());
     }
@@ -368,25 +380,54 @@ public class Controller {
                     TableCell cell = this;
                     @Override
                     protected void updateItem(String item, boolean empty) {
+
                         super.updateItem(item, empty);
-                        PlanningRecord record  =(PlanningRecord)cell.getTableRow().getItem();
+
                         this.setOnMouseClicked(event -> {
                             if (event.getButton()== MouseButton.PRIMARY && event.getClickCount() == 2) {
-                                event.consume();
-                                System.out.println("click");
+                                userData = new HashMap<>();
+                                if(cell.getTableRow()!=null) {
+                                    PlanningRecord oldRecord = (PlanningRecord) cell.getTableRow().getItem();
+                                        userData.put("day", col.getText());
+                                        userData.put("driverId", oldRecord.getDriverId());
+                                   ;
+                                        if(oldRecord.getHoursPerDaymap().containsKey(col.getText())) {
+                                            userData.put("hours", oldRecord.getHoursPerDaymap().get(col.getText()).getHours());
+                                            userData.put("shift", oldRecord.getHoursPerDaymap().get(col.getText()).getShift());
+                                            userData.put("tramId", oldRecord.getHoursPerDaymap().get(col.getText()).getTramId());
+
+                                    }
+                                }
+                               if(item==null){
+                                   userData.remove("hours");
+                                   userData.remove("shift");
+                                   userData.remove("tramId");
+                               }
                                 showAddHoursPane();
-                                PlanningRecord oldRecord = (PlanningRecord) cell.getTableRow().getItem();
-                                Map<String, Object> userData = new HashMap<>();
-                                userData.put("DBid", "1");
-                                AddHoursStage.setUserData(userData);
+
                             }
                             if(event.getButton()==MouseButton.SECONDARY){
 
+                                if(cell.getTableRow()!=null) {
+                                    PlanningRecord oldRecord = (PlanningRecord) cell.getTableRow().getItem();
+                                    userData = new HashMap<>();
+                                    userData.put("day", col.getText());
+                                    userData.put("driverId", oldRecord.getDriverId());
+                                    if(oldRecord.getHoursPerDaymap().containsKey(col.getText())) {
+                                        System.out.println(col.getText());
+                                        userData.put("hours", oldRecord.getHoursPerDaymap().get(col.getText()).getHours());
+                                        userData.put("shift", oldRecord.getHoursPerDaymap().get(col.getText()).getShift());
+                                        userData.put("tramId", oldRecord.getHoursPerDaymap().get(col.getText()).getTramId());
+                                    }
+                                }
+                                if(item==null)userData=null;
+                                item1.setOnAction(action->showAddHoursPane());
+                                cMenu.getItems().add(item1);
+                                cMenu.getItems().add(item2);
                                 cell.setContextMenu(cMenu);
-
                             }
                         });
-
+                    cell.setText(item);
                     }
                 };
             });
@@ -397,7 +438,8 @@ public class Controller {
 
             FXMLLoader loader = new FXMLLoader();
             AddHoursStage = new Stage();
-
+        AddHoursStage.setUserData(userData);
+        AddHoursStage.setOnHiding(hidingEvent->updatePlanningTable());
             try {
                 Parent root = loader.load(getClass().getResource("../../FXML/ui/AddHoursPlan.fxml"));
                 AddHoursStage.setTitle("Add Hours");

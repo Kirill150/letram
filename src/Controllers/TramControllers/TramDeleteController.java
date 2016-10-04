@@ -31,14 +31,15 @@ public class TramDeleteController {
         DeleteTramBox.setItems(obIds);
     }
 
-    public void Del(ActionEvent actionEvent) {
 
-        ExecuteStatement.DeleteDriver(CreateStatement.deleteFromTram(DeleteTramBox.getValue().toString()));
-        ((Button)actionEvent.getTarget()).getScene().getWindow().hide();
-
-    }
 
     public void Cancel(ActionEvent actionEvent) {
+        ((Button)actionEvent.getTarget()).getScene().getWindow().hide();
+    }
+
+    public void Delete(ActionEvent actionEvent) {
+
+        ExecuteStatement.DeleteDriver(CreateStatement.deleteFromTram(DeleteTramBox.getValue().toString()));
         ((Button)actionEvent.getTarget()).getScene().getWindow().hide();
     }
 }
