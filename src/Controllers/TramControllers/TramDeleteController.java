@@ -1,7 +1,6 @@
 package Controllers.TramControllers;
 
-import database.CreateStatement;
-import database.ExecuteStatement;
+import database.TramRepo;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -20,15 +19,18 @@ public class TramDeleteController {
     @FXML
     private ComboBox DeleteTramBox;
 
+    TramRepo repo = new TramRepo();
+
     @FXML
     private  void initialize(){
 
         DeleteTramBox.setValue("Select Tram");
 
         List<String> ids =  new LinkedList();
-        ExecuteStatement.parsingTrams().forEach(item-> ids.add(item.getId()));
+        repo.getTrams().forEach(item-> ids.add(item.getId()));
         ObservableList<String> obIds =  FXCollections.observableList(ids);
         DeleteTramBox.setItems(obIds);
+
     }
 
 
@@ -39,7 +41,7 @@ public class TramDeleteController {
 
     public void Delete(ActionEvent actionEvent) {
 
-        ExecuteStatement.DeleteDriver(CreateStatement.deleteFromTram(DeleteTramBox.getValue().toString()));
+         repo.delete(DeleteTramBox.getValue().toString());
         ((Button)actionEvent.getTarget()).getScene().getWindow().hide();
     }
 }

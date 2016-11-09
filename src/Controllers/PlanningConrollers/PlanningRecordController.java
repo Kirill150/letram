@@ -1,16 +1,15 @@
 package Controllers.PlanningConrollers;
 
-import Controllers.MainController.Controller;
-import Objects.PlanningRecord;
-import Objects.TramIdShiftHours;
-import database.CreateStatement;
-import database.ExecuteStatement;
+
+import Controllers.Controller;
+import Objects.MothMapper;
+import database.PlanningRepo;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -22,17 +21,23 @@ public class PlanningRecordController {
 
     @FXML
     private TextField Tram, Hours, Shift;
+    @FXML
+    private Label Date;
 
-@FXML
-public void initialize(){
+    private PlanningRepo planningRepo = new PlanningRepo();
+
+    MothMapper mapper = new MothMapper();
+
+    @FXML
+    public void initialize(){
 
         Map<String, String> userData = (Map) Controller.AddHoursStage.getUserData();
-    if(userData.containsKey("hours")) {
-        Tram.setText(userData.get("tramId"));
-        Hours.setText(userData.get("hours"));
-        Shift.setText(userData.get("shift"));
-
-    }
+        Date.setText(userData.get("day")+" of " + userData.get("month") +" "+ userData.get("year"));
+         if(userData.containsKey("hours")) {
+             Tram.setText(userData.get("tramId"));
+             Hours.setText(userData.get("hours"));
+             Shift.setText(userData.get("shift"));
+         }
 
 }
 
@@ -41,21 +46,31 @@ public void initialize(){
         Map<String, String> userData = (Map) Controller.AddHoursStage.getUserData();
         if(userData!=null){
             if(userData.containsKey("hours")){
-                System.out.println(userData.get("driverId"));
+                System.out.println("update");
 
-                ExecuteStatement.insert(CreateStatement.updateStatementForPlanningTable(userData.get("day"),
-                                                                                        userData.get("driverId"),
-                                                                                        userData.get("hours"),
-                                                                                        userData.get("tramId"),
-                                                                                        userData.get("shift"),
-                                                                                        Tram.getText(),
-                                                                                        Hours.getText(),
-                                                                                        Shift.getText()));
+                planningRepo.updateRecord(
+                        Integer.parseInt(userData.get("day")),
+                        mapper.getMonthIntValue(userData.get("month")),
+                        Integer.parseInt(userData.get("year") ),
+                        userData.get("driverId"),
+                        userData.get("hours"),
+                        userData.get("tramId"),
+                        userData.get("shift"),
+                        Tram.getText(),
+                        Hours.getText(),
+                        Shift.getText());
 
             }else {
                 System.out.println("insert");
-                ExecuteStatement.insert(CreateStatement.insertStatementForPlaningRecord(userData.get("driverId"), Tram.getText(), userData.get("day"),
-                        Hours.getText(), Shift.getText(), false));
+
+                planningRepo.insertRecord(
+                        Integer.parseInt(userData.get("day")),
+                        mapper.getMonthIntValue(userData.get("month")),
+                        Integer.parseInt(userData.get("year")) ,
+                        userData.get("driverId"),
+                        Tram.getText(),
+                        Hours.getText(),
+                        Shift.getText());
             }
 
         }
@@ -68,8 +83,6 @@ public void initialize(){
     }
 
     public void Clear(ActionEvent actionEvent) {
-
-
 
         ((Button)actionEvent.getTarget()).getScene().getWindow().hide();
 

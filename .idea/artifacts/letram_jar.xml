@@ -1,0 +1,12 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="letram:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/letram_jar</output-path>
+    <root id="archive" name="letram.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="C:/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="module-output" name="letram" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/postgresql-9.4.1208.jre6.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

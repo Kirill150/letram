@@ -5,6 +5,8 @@ package Objects;
  */
 public class Hours {
 
+
+
     private Integer shift;
     private Integer hours;
     public Hours(Integer shift, Integer hours){

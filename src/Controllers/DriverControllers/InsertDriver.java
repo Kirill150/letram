@@ -1,8 +1,6 @@
 package Controllers.DriverControllers;
 
-import Objects.Driver;
-import database.CreateStatement;
-import database.ExecuteStatement;
+import database.DriverRepo;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -22,15 +20,12 @@ public class InsertDriver {
     private TextField Surname;
     @FXML
     private TextField id;
-
+    DriverRepo repo = new DriverRepo();
 
     @FXML
     void InsertDriver(ActionEvent event) throws IOException {
-        Driver driver = new Driver();
-        driver.setName(Name.getText());
-        driver.setSurname(Surname.getText());
-        driver.setCode(id.getText());
-        ExecuteStatement.insert(CreateStatement.insertStatementForAllDriversTable(driver));
+
+        repo.insert(id.getText(),Name.getText(),Surname.getText());
         ((Button)event.getTarget()).getScene().getWindow().hide();
 
     }

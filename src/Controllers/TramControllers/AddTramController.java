@@ -1,14 +1,14 @@
 package Controllers.TramControllers;
 
-import Objects.Tram;
 import Objects.TramColors;
-import database.CreateStatement;
-import database.ExecuteStatement;
+import database.TramRepo;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextField;
 
 /**
  * Created by Papai on 2016.09.24..
@@ -20,7 +20,7 @@ public class AddTramController {
     @FXML
     private TextField TramN,TramId;
 
-    private Tram tram;
+    TramRepo repo = new TramRepo();
 
     @FXML
    void initialize(){
@@ -28,9 +28,8 @@ public class AddTramController {
         colorPicker.setValue("Select color");
         ObservableList<TramColors> colors =
                 FXCollections.observableArrayList(
-                        TramColors.BLUE,
-                        TramColors.RED,
-                        TramColors.GREEN
+
+                        TramColors.values()
                 );
         colorPicker.setItems(colors);
 
@@ -38,11 +37,8 @@ public class AddTramController {
 
     public void Ok(ActionEvent actionEvent) {
 
-        tram = new Tram();
-        tram.setColor(colorPicker.getValue().toString());
-        tram.setId(TramId.getText());
-        tram.setNumber(TramN.getText());
-        ExecuteStatement.insert(CreateStatement.insertTram(tram));
+        repo.insert(TramN.getText(),TramId.getText(),colorPicker.getValue().toString());
+
         ((Button)actionEvent.getTarget()).getScene().getWindow().hide();
     }
 

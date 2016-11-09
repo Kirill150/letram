@@ -12,6 +12,11 @@ public class PlanningRecord {
 
     private Map<String, TramIdShiftHours> hoursPerDaymap;
 
+    private int totalHours;
+
+
+
+
     public String getDriverId() {
         return driverId;
     }
@@ -28,4 +33,11 @@ public class PlanningRecord {
         this.hoursPerDaymap = map;
     }
 
+    public int getTotalHours() {
+        return totalHours;
+    }
+
+    public void setTotalHours(int totalHours) {
+        this.totalHours = totalHours;
+    }
 }

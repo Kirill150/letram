@@ -1,7 +1,6 @@
 package Controllers.DriverControllers;
 
-import database.CreateStatement;
-import database.ExecuteStatement;
+import database.DriverRepo;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -17,6 +16,8 @@ import java.util.List;
  */
 public class DeleteDriver {
 
+    DriverRepo repo = new DriverRepo();
+
     @FXML
     public ComboBox DeleteComboBox;
 
@@ -25,7 +26,7 @@ public class DeleteDriver {
         DeleteComboBox.setValue("Select Driver");
 
         List<String> names =  new LinkedList();
-        ExecuteStatement.ParsingDrivers().forEach(item-> names.add(item.getName()));
+        repo.getDrivers().forEach(item-> names.add(item.getName()));
         ObservableList<String> drivers =  FXCollections.observableList(names);
         DeleteComboBox.setItems(drivers);
 
@@ -33,7 +34,8 @@ public class DeleteDriver {
 
     public void DeleteDriver(ActionEvent actionEvent) {
 
-        ExecuteStatement.DeleteDriver(CreateStatement.deleteStatementForAllDriversTable(DeleteComboBox.getValue().toString()));
+         repo.delete(DeleteComboBox.getValue().toString());
+
         ((Button)actionEvent.getTarget()).getScene().getWindow().hide();
     }
 

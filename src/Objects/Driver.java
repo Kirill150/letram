@@ -12,7 +12,7 @@ public class Driver {
     private String code;
     private Integer TotalHours;
     private String Tram;
-    private LinkedList<Date> Dates;
+
 
     public String getName() {
         return name;
