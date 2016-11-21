@@ -30,9 +30,12 @@ public class PlanningRepo {
 
     private final String GET_NAMES = "SELECT name FROM drivers";
 
-    private final String GET_RECORDS = "SELECT * FROM plan where driver_id = '%s'";
+    private final String GET_RECORDS = "SELECT * FROM plan where driver_id = '%s' and month = %d and year = %d";
 
-    public  ObservableList<PlanningRecord> getRecords() {
+    private final String GET_RECORD = "SELECT * FROM plan where day = %d AND month = %d AND year = %d AND driver_id = '%s' " +
+            "AND tram_id = '%s' and hours = '%s' ";
+
+    public  ObservableList<PlanningRecord> getRecords(Integer month, Integer year) {
         HashMap<String, TramIdShiftHours> map = new HashMap<>();
         PlanningRecord record = new PlanningRecord();
         List<PlanningRecord> records = new LinkedList<>();
@@ -46,12 +49,12 @@ public class PlanningRepo {
 
                 record.setDriverId(rs.getString("name"));
                 stmt2 = c.createStatement();
-                ResultSet rs2 = stmt2.executeQuery(String.format(GET_RECORDS, record.getDriverId()));
+                ResultSet rs2 = stmt2.executeQuery(String.format(GET_RECORDS, record.getDriverId(),month,year));
 
                 while (rs2.next()) {
                     TramIdShiftHours rec = new TramIdShiftHours();
                     rec.setShift(rs2.getString("shift"));
-                    rec.setHoliday(rs2.getBoolean("holiday"));
+                    rec.setHoliday(rs2.getString("holiday"));
                     rec.setHours(rs2.getString("hours"));
                     record.setTotalHours(record.getTotalHours() + Integer.parseInt(rs2.getString("hours")));
                     rec.setTramId(rs2.getString("tram_id"));
@@ -91,12 +94,12 @@ public class PlanningRepo {
 
     public void insertRecord(Integer day, Integer month, Integer year,
                              String driver,
-                             String tram, String hours, String shift){
+                             String tram, String hours, String shift,String holiday){
 
         try {
             Connection c = GetConnection.getConnection();
             Statement stmt = c.createStatement();
-            stmt.executeUpdate(String.format(INSERT, day, month, year, driver, tram, hours, shift));
+            stmt.executeUpdate(String.format(INSERT, day, month, year, driver, tram, hours, shift,holiday));
             stmt.close();
             c.close();
         } catch (SQLException ex) {
@@ -105,5 +108,27 @@ public class PlanningRepo {
 
     }
 
-
+//    public PlanningRecord getRecord(Integer day, Integer month, Integer year,
+//                                    String driver,
+//                                    String tram, String hours){
+//
+//        PlanningRecord record = new PlanningRecord();
+//        HashMap<String, TramIdShiftHours> map = new HashMap<>();
+//        TramIdShiftHours rec = new TramIdShiftHours();
+//        try {
+//
+//            Connection c = GetConnection.getConnection();
+//            Statement stmt = c.createStatement();
+//            ResultSet rs = stmt.executeQuery(String.format(GET_RECORD,day,month,year,driver,tram,hours));
+//            while (rs.next()) {
+//
+//                record.setDriverId(rs.getString("name"));
+//                rec.setTramId();
+//            }
+//        }catch(Exception e){
+//            System.out.println("Get Record SQL ex");
+//        }
+//
+//        return  record;
+//    }
 }

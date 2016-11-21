@@ -7,6 +7,7 @@ import database.PlanningRepo;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
@@ -17,12 +18,14 @@ import java.util.Map;
  */
 
 
-public class PlanningRecordController {
+public class PlanningRecordController{
 
     @FXML
     private TextField Tram, Hours, Shift;
     @FXML
     private Label Date;
+    @FXML
+    private ComboBox<Integer> PlanYear, MainDay, MainYear;
 
     private PlanningRepo planningRepo = new PlanningRepo();
 
@@ -32,14 +35,22 @@ public class PlanningRecordController {
     public void initialize(){
 
         Map<String, String> userData = (Map) Controller.AddHoursStage.getUserData();
-        Date.setText(userData.get("day")+" of " + userData.get("month") +" "+ userData.get("year"));
+       // Date.setText(userData.get("day")+" of " + userData.get("month") +" "+ userData.get("year"));
+
          if(userData.containsKey("hours")) {
              Tram.setText(userData.get("tramId"));
              Hours.setText(userData.get("hours"));
              Shift.setText(userData.get("shift"));
          }
 
-}
+    }
+
+    @FXML
+    public void initialize(String name){
+
+        Tram.setText(name);
+
+    }
 
     public void Ok(ActionEvent actionEvent) {
 
@@ -70,15 +81,17 @@ public class PlanningRecordController {
                         userData.get("driverId"),
                         Tram.getText(),
                         Hours.getText(),
-                        Shift.getText());
+                        Shift.getText(),
+                        userData.get("holiday"));
             }
 
         }
         ((Button)actionEvent.getTarget()).getScene().getWindow().hide();
-
+        ((Map) Controller.AddHoursStage.getUserData()).clear();
     }
 
     public void Cancel(ActionEvent actionEvent) {
+
         ((Button)actionEvent.getTarget()).getScene().getWindow().hide();
     }
 

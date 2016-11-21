@@ -14,9 +14,6 @@ public class PlanningRecord {
 
     private int totalHours;
 
-
-
-
     public String getDriverId() {
         return driverId;
     }

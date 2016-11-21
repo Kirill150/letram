@@ -19,15 +19,16 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-public class Controller {
+public  class Controller {
 
     @FXML
-    public TableColumn<PlanningRecord, String> PlanVardsCol, PlanKopa;
+    public TableColumn<PlanningRecord, String> PlanVardsCol, PlanKopa, SickCol, DayH,NightH;
     @FXML
     public TableColumn<Driver, String> ColVards, ColUzvards, ColKods;
     @FXML
@@ -35,10 +36,13 @@ public class Controller {
     @FXML
     private  TableView DriverTable, TablePlan, TramTable;
     @FXML
-    private ComboBox<String> PlanMonth, MainMonth;
+    public ComboBox<String> PlanMonth, MainMonth;
     @FXML
-    private ComboBox<Integer>  PlanYear, MainDay, MainYear;
+    public ComboBox<Integer>  PlanYear, MainDay, MainYear;
+    @FXML
+    private CheckBox ShowSick, ShowKopa, ShowDayH, ShowNightH;
 
+    private MothMapper mapper = new MothMapper();
     private PlanningRepo planningRepo = new PlanningRepo();
     private DriverRepo driverRepo = new DriverRepo();
     private TramRepo tramRepo = new TramRepo();
@@ -52,20 +56,26 @@ public class Controller {
     Map<String, String> userData;
     public static Stage AddHoursStage;
     public static Tram tramForDoubleClickEdit;
+
     MothMapper monthStirngToValue;
+
     @FXML
     public void initialize() {
 
-
-        ColVards.setVisible(false);
-
         monthStirngToValue = new MothMapper();
 
+     //  "-fx-background-color:red"
+
         createTables();
+        initPlanDate();
         initializePlanningTable();
         initDriversTable();
         initTramTable();
         initializeMonthsAndYear();
+        customizeColumns();
+
+
+
 
     }
 
@@ -87,7 +97,7 @@ public class Controller {
             initCellFactory(col);
         });
 
-        TablePlan.setItems(planningRepo.getRecords());
+        TablePlan.setItems(planningRepo.getRecords(mapper.getMonthIntValue(PlanMonth.getValue()), PlanYear.getValue()));
         TablePlan.getSelectionModel().setCellSelectionEnabled(true);
         TablePlan.setEditable(true);
 
@@ -173,6 +183,55 @@ public class Controller {
                             }
                         }
                     });}
+
+    private void customizeColumns(){
+
+        PlanKopa.setVisible(false);
+        SickCol.setVisible(false);
+        DayH.setVisible(false);
+        NightH.setVisible(false);
+        ShowKopa.setOnAction(event->{
+            if(ShowKopa.isSelected()){
+                PlanKopa.setVisible(true);
+            }else{
+                PlanKopa.setVisible(false);
+            }
+        });
+
+        ShowSick.setOnAction(event->{
+            if(ShowSick.isSelected()){
+                SickCol.setVisible(true);
+            }else{
+                SickCol.setVisible(false);
+            }
+        });
+
+
+        ShowDayH.setOnAction(event->{
+            if(ShowDayH.isSelected()){
+                DayH.setVisible(true);
+            }else{
+                DayH.setVisible(false);
+            }
+        });
+
+        ShowNightH.setOnAction(event->{
+            if(ShowNightH.isSelected()){
+                NightH.setVisible(true);
+            }else{
+                NightH.setVisible(false);
+            }
+        });
+
+    }
+
+    private void initPlanDate(){
+
+        PlanMonth.setValue(mapper.getMonthStringValue(planDateRepo.selectMonth()));
+        PlanYear.setValue(planDateRepo.selectYear());
+        PlanShow();
+
+    }
 
     public void EditDriver(ActionEvent actionEvent) throws Exception {
 
@@ -346,10 +405,11 @@ public class Controller {
 
     public  void updatePlanningTable(){
 
-        TablePlan.setItems(planningRepo.getRecords());
+        TablePlan.setItems(planningRepo.getRecords(mapper.getMonthIntValue(PlanMonth.getValue()),PlanYear.getValue()));
     }
 
     public void initCellFactory(TableColumn<PlanningRecord,String> col){
+
         if(!col.getText().equals("Vards")&&!col.getText().equals("Kopa")) {
                 col.setSortable(false);
                 col.setCellValueFactory(e -> {
@@ -365,31 +425,29 @@ public class Controller {
                     TableCell cell = this;
                     @Override
                     protected void updateItem(String item, boolean empty) {
-
                         super.updateItem(item, empty);
+
+                        setStyle(col.getStyle());
 
                         this.setOnMouseClicked(event -> {
                             if (event.getButton()== MouseButton.PRIMARY && event.getClickCount() == 2) {
                                 userData = new HashMap<>();
                                 if(cell.getTableRow()!=null) {
                                     PlanningRecord oldRecord = (PlanningRecord) cell.getTableRow().getItem();
+
                                         userData.put("day", col.getText());
                                         userData.put("driverId", oldRecord.getDriverId());
                                         userData.put("month", PlanMonth.getValue());
                                         userData.put("year", PlanYear.getValue().toString());
+                                        userData.put("holiday", col.getUserData().toString());
 
-                                        if(oldRecord.getHoursPerDaymap().containsKey(col.getText())) {
+                                        if(oldRecord.getHoursPerDaymap().containsKey(col.getText())&&item!=null) {
                                             userData.put("hours", oldRecord.getHoursPerDaymap().get(col.getText()).getHours());
                                             userData.put("shift", oldRecord.getHoursPerDaymap().get(col.getText()).getShift());
                                             userData.put("tramId", oldRecord.getHoursPerDaymap().get(col.getText()).getTramId());
 
                                     }
                                 }
-                               if(item==null){
-                                   userData.remove("hours");
-                                   userData.remove("shift");
-                                   userData.remove("tramId");
-                               }
                                 showAddHoursPane();
 
                             }
@@ -429,27 +487,160 @@ public class Controller {
             AddHoursStage.setOnHiding(hidingEvent->updatePlanningTable());
             try {
                 Parent root = loader.load(getClass().getResource("/Controllers/ui/AddHoursPlan.fxml"));
+
                 AddHoursStage.setTitle("Add Hours");
                 AddHoursStage.setResizable(false);
                 AddHoursStage.setScene(new Scene(root));
                 AddHoursStage.initModality(Modality.WINDOW_MODAL);
                 AddHoursStage.initOwner(TablePlan.getScene().getWindow());
                 AddHoursStage.show();
+
+
             } catch (Exception exc) {
                 System.out.println(exc.getClass());
             }
 
     }
 
+    public void PlanShow() {
+
+        planDateRepo.insert(monthStirngToValue.getMonthIntValue(PlanMonth.getValue()), PlanYear.getValue());
+        LocalDate date = LocalDate.of(PlanYear.getValue(),mapper.getMonthIntValue(PlanMonth.getValue()),Integer.valueOf(1));
+        int month =  date.lengthOfMonth() ;
+        TableColumn<PlanningRecord, String> col31 =( TableColumn<PlanningRecord, String>) TablePlan.getColumns().get(31);
+        TableColumn<PlanningRecord, String> col30 =( TableColumn<PlanningRecord, String>) TablePlan.getColumns().get(30);
+        TableColumn<PlanningRecord, String> col29 =( TableColumn<PlanningRecord, String>) TablePlan.getColumns().get(29);
+
+        switch (month){
+            case 31 :
+                col30.setVisible(true);
+                col29.setVisible(true);
+                col31.setVisible(true);
+                TablePlan.getColumns().subList(1,32).forEach(item -> {
+
+                    TableColumn<PlanningRecord, String> col = (TableColumn<PlanningRecord, String>) item;
+                    markWeekends(col);
+                });
+                break;
+
+            case 30 :
+                col30.setVisible(true);
+                col29.setVisible(true);
+                col31.setVisible(false);
+                TablePlan.getColumns().subList(1,31).forEach(item -> {
+                    TableColumn<PlanningRecord, String> col = (TableColumn<PlanningRecord, String>) item;
+                    markWeekends(col);
+                });
+                break;
+
+            case 29 :
+                col30.setVisible(false);
+                col29.setVisible(true);
+                col31.setVisible(false);
+                TablePlan.getColumns().subList(1,30).forEach(item -> {
+                    TableColumn<PlanningRecord, String> col = (TableColumn<PlanningRecord, String>) item;
+                    markWeekends(col);
+                });
+                break;
+
+            case 28 :
+                col30.setVisible(false);
+                col29.setVisible(false);
+                col31.setVisible(false);
+                TablePlan.getColumns().subList(1,29).forEach(item -> {
+                    TableColumn<PlanningRecord, String> col = (TableColumn<PlanningRecord, String>) item;
+                    markWeekends(col);
+                });
+        }
+
+    }
+
     public void PlanShow(ActionEvent actionEvent) {
 
         planDateRepo.insert(monthStirngToValue.getMonthIntValue(PlanMonth.getValue()), PlanYear.getValue());
+        LocalDate date = LocalDate.of(PlanYear.getValue(),mapper.getMonthIntValue(PlanMonth.getValue()),Integer.valueOf(1));
+        int month =  date.lengthOfMonth() ;
+        TableColumn<PlanningRecord, String> col31 =( TableColumn<PlanningRecord, String>) TablePlan.getColumns().get(31);
+        TableColumn<PlanningRecord, String> col30 =( TableColumn<PlanningRecord, String>) TablePlan.getColumns().get(30);
+        TableColumn<PlanningRecord, String> col29 =( TableColumn<PlanningRecord, String>) TablePlan.getColumns().get(29);
 
+        switch (month){
+            case 31 :
+                col30.setVisible(true);
+                col29.setVisible(true);
+                col31.setVisible(true);
+                TablePlan.getColumns().subList(1,32).forEach(item -> {
+
+                    TableColumn<PlanningRecord, String> col = (TableColumn<PlanningRecord, String>) item;
+                    System.out.println(col.getText());
+                    markWeekends(col);
+                });
+                break;
+
+            case 30 :
+                col30.setVisible(true);
+                col29.setVisible(true);
+                col31.setVisible(false);
+                TablePlan.getColumns().subList(1,31).forEach(item -> {
+                    TableColumn<PlanningRecord, String> col = (TableColumn<PlanningRecord, String>) item;
+
+                    markWeekends(col);
+                });
+                break;
+
+            case 29 :
+                col30.setVisible(false);
+                col29.setVisible(true);
+                col31.setVisible(false);
+                TablePlan.getColumns().subList(1,30).forEach(item -> {
+                    TableColumn<PlanningRecord, String> col = (TableColumn<PlanningRecord, String>) item;
+
+                    markWeekends(col);
+                });
+                break;
+
+            case 28 :
+                col30.setVisible(false);
+                col29.setVisible(false);
+                col31.setVisible(false);
+                TablePlan.getColumns().subList(1,29).forEach(item -> {
+                    TableColumn<PlanningRecord, String> col = (TableColumn<PlanningRecord, String>) item;
+
+                    markWeekends(col);
+                });
+        }
+     updatePlanningTable();
+    }
+
+    private void markWeekends(TableColumn<PlanningRecord,String> col){
+
+        LocalDate date = LocalDate.of(PlanYear.getValue(), mapper.getMonthIntValue(PlanMonth.getValue()),Integer.parseInt(col.getText()));
+        col.setUserData(date.getDayOfWeek().toString());
+        if(date.getDayOfWeek().getValue()==6){
+
+            col.setStyle(" -fx-background-color: lightGray;  -fx-border-color:grey; -fx-border-width: 0 1 1 1");
+            initCellFactory(col);
+
+        }
+        if(date.getDayOfWeek().getValue()==7){
+
+            col.setStyle(" -fx-background-color: lightGray;  -fx-border-color:grey; -fx-border-width: 0 1 1 0");
+
+            initCellFactory(col);
+        }
+        if(date.getDayOfWeek().getValue()!=7&&date.getDayOfWeek().getValue()!=6){
+            col.setStyle(null);
+            initCellFactory(col);
+
+
+        }
     }
 
     public void MainShow(ActionEvent actionEvent) {
 
        mainDateRepo.insert(MainDay.getValue(),monthStirngToValue.getMonthIntValue(PlanMonth.getValue()), PlanYear.getValue());
+
+
 
     }
 
@@ -492,4 +683,5 @@ public class Controller {
 
 
     }
+
 }

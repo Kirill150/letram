@@ -31,7 +31,7 @@ public class CreateTables {
                                           + "Tram_id VARCHAR NOT NULL, "
                                           + "Hours VARCHAR NOT NULL, "
                                           + "Shift VARCHAR NOT NULL, "
-                                          + "holiday BOOLEAN) ";
+                                          + "holiday VARCHAR) ";
 
     private final String TRAM_TABLE = "CREATE TABLE IF NOT EXISTS Trams "
                                       + "(Number INT NOT NULL, "

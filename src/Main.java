@@ -14,10 +14,11 @@ public class Main extends Application {
         primaryStage.show();
         primaryStage.setMinHeight(530);
         primaryStage.setMinWidth(800);
-      //  getClass().getClassLoader().getResource("uiMain.class").getPath();
+
     }
 
     public static void main(String[] args) {
+
         launch(args);
     }
 

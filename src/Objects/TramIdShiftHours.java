@@ -8,6 +8,7 @@ public class TramIdShiftHours {
     private String tramId;
     private String shift;
     private String hours;
+    private String holiday;
 
     public String getHours() {
         return hours;
@@ -17,7 +18,7 @@ public class TramIdShiftHours {
         this.hours = hours;
     }
 
-    private boolean holiday;
+
 
     public String getTramId() {
         return tramId;
@@ -35,11 +36,11 @@ public class TramIdShiftHours {
         this.shift = shift;
     }
 
-    public boolean isHoliday() {
+    public String getHoliday() {
         return holiday;
     }
 
-    public void setHoliday(boolean holiday) {
+    public void setHoliday(String holiday) {
         this.holiday = holiday;
     }
 }
