@@ -20,10 +20,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.time.LocalDate;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.time.format.DateTimeFormatter;
+import java.util.*;
 
 public  class Controller {
 
@@ -612,27 +610,31 @@ public  class Controller {
      updatePlanningTable();
     }
 
+    private boolean isHoliday(LocalDate date){
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM");
+        List<String> svetki = Arrays.asList("18-11", "24-12", "25-12", "26-12", "01-01", "31-12", "01-05", "04-05",
+                "24-06", "23-06");
+
+        if(date.getDayOfWeek().getValue()==6 || date.getDayOfWeek().getValue()==7 ){
+            return true;
+        } else if(svetki.contains(date.format(formatter))) {
+            return true;
+        }
+        return false;
+    }
+
     private void markWeekends(TableColumn<PlanningRecord,String> col){
 
         LocalDate date = LocalDate.of(PlanYear.getValue(), mapper.getMonthIntValue(PlanMonth.getValue()),Integer.parseInt(col.getText()));
         col.setUserData(date.getDayOfWeek().toString());
-        if(date.getDayOfWeek().getValue()==6){
+        if(isHoliday(date)==true){
 
-            col.setStyle(" -fx-background-color: lightGray;  -fx-border-color:grey; -fx-border-width: 0 1 1 1");
+            col.setStyle(" -fx-background-color: lightGray;  -fx-border-color:grey; -fx-border-width: 1 1 1 1");
             initCellFactory(col);
 
-        }
-        if(date.getDayOfWeek().getValue()==7){
-
-            col.setStyle(" -fx-background-color: lightGray;  -fx-border-color:grey; -fx-border-width: 0 1 1 0");
-
-            initCellFactory(col);
-        }
-        if(date.getDayOfWeek().getValue()!=7&&date.getDayOfWeek().getValue()!=6){
+        } else {
             col.setStyle(null);
             initCellFactory(col);
-
-
         }
     }
 
